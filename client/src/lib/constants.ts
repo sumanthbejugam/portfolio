@@ -1,4 +1,4 @@
-import { SiReact, SiNodedotjs, SiPython, SiAmazonaws, SiMongodb, SiPostgresql, SiFlutter } from "react-icons/si";
+import { SiReact, SiNodedotjs, SiPython, SiAwsamplify, SiMongodb, SiPostgresql, SiFlutter } from "react-icons/si";
 
 export const RESUME_DATA = {
   name: "Sumanth Bejugam",
@@ -41,7 +41,7 @@ export const SKILLS_DATA = {
     { name: "React", icon: SiReact },
     { name: "Node.js", icon: SiNodedotjs },
     { name: "Python", icon: SiPython },
-    { name: "AWS", icon: SiAmazonaws },
+    { name: "AWS", icon: SiAwsamplify },
     { name: "MongoDB", icon: SiMongodb },
     { name: "PostgreSQL", icon: SiPostgresql },
     { name: "Flutter", icon: SiFlutter }
