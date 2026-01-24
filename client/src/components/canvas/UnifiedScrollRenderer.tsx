@@ -67,19 +67,39 @@ const UnifiedScrollRenderer = ({ imagePaths, containerRef }: UnifiedScrollRender
             let offsetX = 0;
             let offsetY = 0;
 
-            // CONTAIN Logic (Fit screen to avoid pixelation)
-            if (canvasRatio > imgRatio) {
-                // Canvas is wider than image -> fit height
-                drawHeight = canvas.height;
-                drawWidth = canvas.height * imgRatio;
-                offsetX = (canvas.width - drawWidth) / 2;
-                offsetY = 0;
+            // Mobile check
+            const isMobile = window.innerWidth < 768;
+
+            if (isMobile) {
+                // COVER Logic (Fill screen on mobile)
+                if (canvasRatio > imgRatio) {
+                    // Canvas is wider than image -> match width, overflow height
+                    drawWidth = canvas.width;
+                    drawHeight = canvas.width / imgRatio;
+                    offsetX = 0;
+                    offsetY = (canvas.height - drawHeight) / 2;
+                } else {
+                    // Canvas is taller than image (normal mobile) -> match height, overflow width
+                    drawHeight = canvas.height;
+                    drawWidth = canvas.height * imgRatio;
+                    offsetX = (canvas.width - drawWidth) / 2;
+                    offsetY = 0;
+                }
             } else {
-                // Canvas is taller than image -> fit width
-                drawWidth = canvas.width;
-                drawHeight = canvas.width / imgRatio;
-                offsetX = 0;
-                offsetY = (canvas.height - drawHeight) / 2;
+                // CONTAIN Logic (Fit screen to avoid pixelation on web)
+                if (canvasRatio > imgRatio) {
+                    // Canvas is wider than image -> fit height
+                    drawHeight = canvas.height;
+                    drawWidth = canvas.height * imgRatio;
+                    offsetX = (canvas.width - drawWidth) / 2;
+                    offsetY = 0;
+                } else {
+                    // Canvas is taller than image -> fit width
+                    drawWidth = canvas.width;
+                    drawHeight = canvas.width / imgRatio;
+                    offsetX = 0;
+                    offsetY = (canvas.height - drawHeight) / 2;
+                }
             }
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
