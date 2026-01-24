@@ -24,16 +24,18 @@ const ScrollTextOverlay = ({ showRange, children, containerRef }: ScrollTextOver
     const fadeInEnd = start + ((end - start) * 0.2); // First 20% of range
     const fadeOutStart = end - ((end - start) * 0.2); // Last 20% of range
 
+    const isStart = start === 0;
+
     const opacity = useTransform(
         scrollYProgress,
         [start, fadeInEnd, fadeOutStart, end],
-        [0, 1, 1, 0]
+        isStart ? [1, 1, 1, 0] : [0, 1, 1, 0]
     );
 
     const y = useTransform(
         scrollYProgress,
         [start, fadeInEnd, fadeOutStart, end],
-        [50, 0, 0, -50]
+        isStart ? [0, 0, 0, -50] : [50, 0, 0, -50]
     );
 
     return (
