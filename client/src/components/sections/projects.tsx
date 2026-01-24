@@ -23,6 +23,8 @@ export default function Projects() {
                 description={project.description}
                 technologies={project.technologies}
                 metrics={project.metrics}
+                imageUrl={project.image}
+                url={project.url}
               />
             ))}
           </div>

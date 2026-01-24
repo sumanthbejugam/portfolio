@@ -28,7 +28,7 @@ export default function Experience() {
                   <CardContent>
                     <ul className="list-disc pl-6 space-y-2">
                       {job.achievements.map((achievement, i) => (
-                        <li key={i} className="text-muted-foreground">
+                        <li key={i} className="">
                           {achievement}
                         </li>
                       ))}

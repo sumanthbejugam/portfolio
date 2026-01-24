@@ -42,7 +42,7 @@ export default function NavHeader() {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-md font-medium text-primary hover:text-primary transition-colors"
             >
               {item.name}
             </a>

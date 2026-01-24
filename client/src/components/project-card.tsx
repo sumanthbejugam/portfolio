@@ -9,9 +9,12 @@ interface ProjectCardProps {
   technologies: string[];
   metrics?: string;
   imageUrl?: string;
+  url?: string;
 }
 
-export default function ProjectCard({ title, description, technologies, metrics, imageUrl }: ProjectCardProps) {
+export default function ProjectCard({ title, description, technologies, metrics, imageUrl, url }: ProjectCardProps) {
+  console.log(imageUrl);
+
   return (
     <motion.div
       variants={fadeIn}
@@ -19,38 +22,40 @@ export default function ProjectCard({ title, description, technologies, metrics,
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-        {imageUrl && (
-          <div className="w-full h-48 relative">
-            <img 
-              src={imageUrl} 
-              alt={title}
-              className="object-cover w-full h-full"
-            />
-          </div>
-        )}
-        
-        <CardHeader>
-          <CardTitle className="text-xl">{title}</CardTitle>
-          <CardDescription>{description}</CardDescription>
-        </CardHeader>
-        
-        <CardContent>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {technologies.map((tech) => (
-              <Badge key={tech} variant="secondary">
-                {tech}
-              </Badge>
-            ))}
-          </div>
-          
-          {metrics && (
-            <p className="text-sm text-muted-foreground">
-              {metrics}
-            </p>
+      <a href={url} target="_blank" rel="noreferrer">
+        <Card className="overflow-hidden hover:shadow-lg transition-shadow" >
+          {imageUrl && (
+            <div className="w-full h-48 relative">
+              <img
+                src={imageUrl}
+                alt={title}
+                className="object-cover w-full h-full"
+              />
+            </div>
           )}
-        </CardContent>
-      </Card>
+
+          <CardHeader>
+            <CardTitle className="text-xl">{title}</CardTitle>
+            <CardDescription>{description}</CardDescription>
+          </CardHeader>
+
+          <CardContent>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {technologies.map((tech) => (
+                <Badge key={tech} variant="secondary">
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+
+            {metrics && (
+              <p className="text-sm text-muted-foreground">
+                {metrics}
+              </p>
+            )}
+          </CardContent>
+        </Card>
+      </a >
     </motion.div>
   );
 }

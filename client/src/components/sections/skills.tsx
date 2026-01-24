@@ -28,18 +28,18 @@ export default function Skills() {
             ))}
           </div>
 
-          <div className="max-w-2xl mx-auto">
+          <div className="mx-auto">
             <h3 className="text-xl font-semibold mb-6">Certifications</h3>
-            <ul className="space-y-4">
+            <ul className="justify-center gap-4">
               {SKILLS_DATA.certifications.map((cert, index) => (
-                <motion.li
-                  key={index}
-                  variants={scaleIn}
-                  className="flex items-center gap-2"
-                >
-                  <span className="h-2 w-2 rounded-full bg-primary" />
-                  {cert}
-                </motion.li>
+              <motion.li
+              key={index}
+              variants={scaleIn}
+              className="flex items-center gap-2"
+              >
+              <span className="h-2 w-2 rounded-full bg-primary" />
+              {cert}
+              </motion.li>
               ))}
             </ul>
           </div>

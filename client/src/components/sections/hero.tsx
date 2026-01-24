@@ -21,12 +21,32 @@ export default function Hero() {
             Hi, I'm {RESUME_DATA.name}
           </motion.h1>
           
-          <motion.p 
-            className="text-xl md:text-2xl text-muted-foreground mb-8"
-            variants={slideIn}
-          >
-            {RESUME_DATA.summary}
-          </motion.p>
+            <motion.p 
+              className="text-xl md:text-2xl text-muted-foreground mb-8 relative overflow-hidden"
+              variants={slideIn}
+            >
+              {RESUME_DATA.summary.split(" ").map((word, index) => (
+                <motion.span
+                  key={index}
+                  className="inline-block relative"
+                  initial={{ backgroundSize: "0% 2px" }}
+                  animate={{ backgroundSize: "100% 2px" }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.2,
+                    ease: "easeInOut",
+                  }}
+                  style={{
+                    backgroundImage: "linear-gradient(to right, currentColor, currentColor)",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "0 100%",
+                    backgroundSize: index === RESUME_DATA.summary.split(" ").length - 1 ? "100% 2px" : "0% 2px",
+                  }}
+                >
+                  {word}&nbsp;
+                </motion.span>
+              ))}
+            </motion.p>
 
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -36,7 +56,7 @@ export default function Hero() {
               <a href="#contact">Contact Me</a>
             </Button>
             
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" onClick={() => window.open(RESUME_DATA.resume, "_blank")}>
               <Download className="mr-2 h-4 w-4" />
               Download Resume
             </Button>
