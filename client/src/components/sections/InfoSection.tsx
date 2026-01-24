@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FaEnvelope, FaLinkedin, FaFileAlt } from "react-icons/fa";
 
 const InfoSection = () => {
     return (
@@ -22,7 +23,7 @@ const InfoSection = () => {
                 >
                     <h2 className="text-4xl font-bold mb-6 text-white">About Me</h2>
                     <p className="text-xl text-secondary leading-relaxed">
-                        I am a Full Stack Developer with a passion for building scalable, high-performance applications.
+                        I am a Software Development Engineer with a passion for building scalable, high-performance applications.
                         From web and mobile to edge computing and AI, I bridge the gap between hardware and software
                         to create seamless digital experiences.
                     </p>
@@ -37,30 +38,39 @@ const InfoSection = () => {
                 >
                     <a
                         href="mailto:sumanthbejugam@gmail.com"
-                        className="p-6 border border-glass-border rounded-lg bg-black/40 hover:bg-white/10 transition-all duration-300 group backdrop-blur-md"
+                        className="p-6 border border-glass-border rounded-lg bg-black/40 hover:bg-white/10 transition-all duration-300 group backdrop-blur-md flex flex-col items-center gap-4"
                     >
-                        <h3 className="text-2xl font-semibold text-white mb-2 group-hover:text-accent">Email Me</h3>
-                        <p className="text-secondary text-sm">sumanthbejugam@gmail.com</p>
+                        <FaEnvelope className="text-4xl text-white group-hover:text-accent transition-colors" />
+                        <div>
+                            <h3 className="text-2xl font-semibold text-white mb-2 group-hover:text-accent">Email Me</h3>
+                            <p className="text-secondary text-sm">sumanthbejugam@gmail.com</p>
+                        </div>
                     </a>
 
                     <a
-                        href="https://linkedin.com/in/bejugamsumanth"
+                        href="https://www.linkedin.com/in/sumanthbejugam/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-6 border border-glass-border rounded-lg bg-black/40 hover:bg-white/10 transition-all duration-300 group backdrop-blur-md"
+                        className="p-6 border border-glass-border rounded-lg bg-black/40 hover:bg-white/10 transition-all duration-300 group backdrop-blur-md flex flex-col items-center gap-4"
                     >
-                        <h3 className="text-2xl font-semibold text-white mb-2 group-hover:text-accent">LinkedIn</h3>
-                        <p className="text-secondary text-sm">Connect with me</p>
+                        <FaLinkedin className="text-4xl text-white group-hover:text-accent transition-colors" />
+                        <div>
+                            <h3 className="text-2xl font-semibold text-white mb-2 group-hover:text-accent">LinkedIn</h3>
+                            <p className="text-secondary text-sm">Connect with me</p>
+                        </div>
                     </a>
 
                     <a
                         href="https://docs.google.com/document/d/1pv7qBODUqVrOBGXt8pZVGLqWUn-_rfy2awr9ZV-s2lE/edit?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-6 border border-glass-border rounded-lg bg-black/40 hover:bg-white/10 transition-all duration-300 group backdrop-blur-md"
+                        className="p-6 border border-glass-border rounded-lg bg-black/40 hover:bg-white/10 transition-all duration-300 group backdrop-blur-md flex flex-col items-center gap-4"
                     >
-                        <h3 className="text-2xl font-semibold text-white mb-2 group-hover:text-accent">Resume</h3>
-                        <p className="text-secondary text-sm">View my CV</p>
+                        <FaFileAlt className="text-4xl text-white group-hover:text-accent transition-colors" />
+                        <div>
+                            <h3 className="text-2xl font-semibold text-white mb-2 group-hover:text-accent">Resume</h3>
+                            <p className="text-secondary text-sm">View my CV</p>
+                        </div>
                     </a>
                 </motion.div>
 
