@@ -1,9 +1,10 @@
 import { useRef } from "react";
+import { motion } from "framer-motion";
 import UnifiedScrollRenderer from "./canvas/UnifiedScrollRenderer";
 import ScrollTextOverlay from "./canvas/ScrollTextOverlay";
 import { allFrames } from "../utils/asset-manifest";
 import {
-    FaReact, FaNodeJs, FaAws, FaAndroid, FaJava, FaBrain, FaRobot, FaCogs
+    FaReact, FaNodeJs, FaAws, FaAndroid, FaJava, FaBrain, FaRobot, FaCogs, FaChevronDown
 } from "react-icons/fa";
 import {
     SiNextdotjs, SiVite, SiDjango, SiFlask, SiExpress, SiFastapi, SiStreamlit,
@@ -78,6 +79,22 @@ const MainExperience = () => {
                         <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
                             Building scalable, intelligent solutions that bridge the gap between complex backend systems and intuitive user experiences.
                         </p>
+
+                        <motion.div
+                            style={{ x: "-50%" }}
+                            initial={{ opacity: 0.5, y: 10 }}
+                            animate={{ opacity: 1, y: [0, 10, 0] }}
+                            transition={{
+                                opacity: { duration: 1, delay: 1 },
+                                y: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+                            }}
+                            className="absolute bottom-0 left-1/2 mb-16 flex flex-col items-center gap-3"
+                        >
+                            <span className="text-xs md:text-sm font-light tracking-[0.2em] text-white/50 uppercase">
+                                Scroll down for an experience
+                            </span>
+                            <FaChevronDown className="text-white/50 text-xl" />
+                        </motion.div>
                     </div>
                 </ScrollTextOverlay>
 
