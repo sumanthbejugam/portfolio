@@ -33,14 +33,14 @@ const InfoSection = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
                 >
                     <a
                         href="mailto:sumanthbejugam@gmail.com"
                         className="p-6 border border-glass-border rounded-lg bg-black/40 hover:bg-white/10 transition-all duration-300 group backdrop-blur-md"
                     >
                         <h3 className="text-2xl font-semibold text-white mb-2 group-hover:text-accent">Email Me</h3>
-                        <p className="text-secondary">sumanthbejugam@gmail.com</p>
+                        <p className="text-secondary text-sm">sumanthbejugam@gmail.com</p>
                     </a>
 
                     <a
@@ -50,7 +50,17 @@ const InfoSection = () => {
                         className="p-6 border border-glass-border rounded-lg bg-black/40 hover:bg-white/10 transition-all duration-300 group backdrop-blur-md"
                     >
                         <h3 className="text-2xl font-semibold text-white mb-2 group-hover:text-accent">LinkedIn</h3>
-                        <p className="text-secondary">Connect with me</p>
+                        <p className="text-secondary text-sm">Connect with me</p>
+                    </a>
+
+                    <a
+                        href="https://docs.google.com/document/d/1pv7qBODUqVrOBGXt8pZVGLqWUn-_rfy2awr9ZV-s2lE/edit?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-6 border border-glass-border rounded-lg bg-black/40 hover:bg-white/10 transition-all duration-300 group backdrop-blur-md"
+                    >
+                        <h3 className="text-2xl font-semibold text-white mb-2 group-hover:text-accent">Resume</h3>
+                        <p className="text-secondary text-sm">View my CV</p>
                     </a>
                 </motion.div>
 
