@@ -103,7 +103,13 @@ const UnifiedScrollRenderer = ({ imagePaths, containerRef }: UnifiedScrollRender
             }
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.globalAlpha = 1.0; // 100% opacity
             ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+            ctx.globalAlpha = 1.0; // Reset opacity
+
+            // Black Overlay
+            ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
         };
 
         // Animation Loop
