@@ -21,12 +21,14 @@ const InfoSection = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center"
                 >
-                    <h2 className="text-4xl font-bold mb-6 text-white">About Me</h2>
-                    <p className="text-xl text-secondary leading-relaxed">
-                        I am a Software Development Engineer with a passion for building scalable, high-performance applications.
-                        From web and mobile to edge computing and AI, I bridge the gap between hardware and software
-                        to create seamless digital experiences.
-                    </p>
+                    <div className="p-8 md:p-10 rounded-3xl backdrop-blur-xl bg-white/5 border border-white/10 shadow-2xl">
+                        <h2 className="text-4xl font-bold mb-6 text-white">About Me</h2>
+                        <p className="text-xl text-gray-200 leading-relaxed font-light">
+                            I am a Software Development Engineer with a passion for building scalable, high-performance applications.
+                            From web and mobile to edge computing and AI, I bridge the gap between hardware and software
+                            to create seamless digital experiences.
+                        </p>
+                    </div>
                 </motion.div>
 
                 {/* Contact Links */}
@@ -38,12 +40,12 @@ const InfoSection = () => {
                 >
                     <a
                         href="mailto:sumanthbejugam@gmail.com"
-                        className="p-6 border border-glass-border rounded-lg bg-black/40 hover:bg-white/10 transition-all duration-300 group backdrop-blur-md flex flex-col items-center gap-4"
+                        className="p-6 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 shadow-xl hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center gap-4"
                     >
-                        <FaEnvelope className="text-4xl text-white group-hover:text-accent transition-colors" />
+                        <FaEnvelope className="text-4xl text-white/80 group-hover:text-white transition-colors" />
                         <div>
-                            <h3 className="text-2xl font-semibold text-white mb-2 group-hover:text-accent">Email Me</h3>
-                            <p className="text-secondary text-sm">sumanthbejugam@gmail.com</p>
+                            <h3 className="text-2xl font-semibold text-white mb-2">Email Me</h3>
+                            <p className="text-gray-400 text-sm group-hover:text-gray-200 transition-colors">sumanthbejugam@gmail.com</p>
                         </div>
                     </a>
 
@@ -51,12 +53,12 @@ const InfoSection = () => {
                         href="https://www.linkedin.com/in/sumanthbejugam/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-6 border border-glass-border rounded-lg bg-black/40 hover:bg-white/10 transition-all duration-300 group backdrop-blur-md flex flex-col items-center gap-4"
+                        className="p-6 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 shadow-xl hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center gap-4"
                     >
-                        <FaLinkedin className="text-4xl text-white group-hover:text-accent transition-colors" />
+                        <FaLinkedin className="text-4xl text-white/80 group-hover:text-white transition-colors" />
                         <div>
-                            <h3 className="text-2xl font-semibold text-white mb-2 group-hover:text-accent">LinkedIn</h3>
-                            <p className="text-secondary text-sm">Connect with me</p>
+                            <h3 className="text-2xl font-semibold text-white mb-2">LinkedIn</h3>
+                            <p className="text-gray-400 text-sm group-hover:text-gray-200 transition-colors">Connect with me</p>
                         </div>
                     </a>
 
@@ -64,18 +66,18 @@ const InfoSection = () => {
                         href="https://docs.google.com/document/d/1pv7qBODUqVrOBGXt8pZVGLqWUn-_rfy2awr9ZV-s2lE/edit?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-6 border border-glass-border rounded-lg bg-black/40 hover:bg-white/10 transition-all duration-300 group backdrop-blur-md flex flex-col items-center gap-4"
+                        className="p-6 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 shadow-xl hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center gap-4"
                     >
-                        <FaFileAlt className="text-4xl text-white group-hover:text-accent transition-colors" />
+                        <FaFileAlt className="text-4xl text-white/80 group-hover:text-white transition-colors" />
                         <div>
-                            <h3 className="text-2xl font-semibold text-white mb-2 group-hover:text-accent">Resume</h3>
-                            <p className="text-secondary text-sm">View my CV</p>
+                            <h3 className="text-2xl font-semibold text-white mb-2">Resume</h3>
+                            <p className="text-gray-400 text-sm group-hover:text-gray-200 transition-colors">View my CV</p>
                         </div>
                     </a>
                 </motion.div>
 
                 <footer className="text-center text-sm text-white/30 pt-20">
-                    © 2026 Sumanth Bejugam. Built with React, Vite & Framer Motion.
+                    © 2026 Sumanth Bejugam.
                 </footer>
             </div>
         </section>
