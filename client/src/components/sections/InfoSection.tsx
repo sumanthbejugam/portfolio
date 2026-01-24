@@ -7,7 +7,7 @@ const InfoSection = () => {
             {/* Background Image */}
             <div
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: "url('/assets/background.jpeg')" }}
+                style={{ backgroundImage: `url('${import.meta.env.BASE_URL}assets/background.jpeg')` }}
             >
                 <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
             </div>

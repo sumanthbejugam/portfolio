@@ -3,9 +3,8 @@
 
 const generatePaths = (clipFolder: string, count: number) => {
     return Array.from({ length: count }, (_, i) => {
-        // Format index to 5 digits (00001, 00002, etc.)
         const frameNum = (i + 1).toString().padStart(5, "0");
-        return `/assets/${clipFolder}/frame_${frameNum}.webp`;
+        return `${import.meta.env.BASE_URL}assets/${clipFolder}/frame_${frameNum}.webp`;
     });
 };
 
