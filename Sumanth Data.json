@@ -1,0 +1,726 @@
+{
+    "all_skills": [
+        "Full Stack Development",
+        "Frontend Development",
+        "Backend Development",
+        "Mobile App Development",
+        "Cross-Platform App Development",
+        "IoT System Design",
+        "System Architecture",
+        "Project Leadership",
+        "Wireframing & Prototyping",
+        "UI/UX Design",
+        "Testing & Debugging",
+        "Web Scraping & Automation",
+        "Bluetooth Low Energy (BLE) Communication",
+        "Cloud Infrastructure Automation",
+        "Database Design & Optimization",
+        "DevOps Pipelines",
+        "ETL Pipelines",
+        "Rapid Prototyping",
+        "Performance Optimization",
+        "Security Integration",
+        "Real-Time Data Communication",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "Dart",
+        "Java",
+        "Python",
+        "C++",
+        "PHP",
+        "SQL",
+        "Bash",
+        "Arduino C",
+        "Flutter",
+        "Android SDK",
+        "ReactJS",
+        "React Native",
+        "Redux",
+        "Flask",
+        "Node.js",
+        "Express.js",
+        "Spring Boot",
+        "Django",
+        "Next.js",
+        "Bootstrap",
+        "Tailwind CSS",
+        "Firebase",
+        "Firestore",
+        "Firebase Auth",
+        "Firebase Messaging",
+        "Firebase Analytics",
+        "Firebase Storage",
+        "MongoDB",
+        "MySQL",
+        "PostgreSQL",
+        "SQL Server",
+        "Snowflake",
+        "Docker",
+        "Boomi",
+        "Apache Airflow",
+        "Git",
+        "GitHub",
+        "Figma",
+        "Adobe XD",
+        "Puppeteer",
+        "Selenium",
+        "Stripe",
+        "Razorpay",
+        "Google Maps API",
+        "Google Ads",
+        "Unity Ads",
+        "AWS EC2",
+        "AWS S3",
+        "AWS CloudFront",
+        "AWS CodeBuild",
+        "AWS CodePipeline",
+        "AWS EFS",
+        "AWS EIP",
+        "Boto3",
+        "Google Cloud Platform",
+        "NLP",
+        "RAG (Retrieval-Augmented Generation)",
+        "Agentic AI Workflows",
+        "Data Visualization",
+        "Data Cleaning",
+        "ESP32",
+        "Arduino",
+        "MQTT",
+        "Raspberry Pi",
+        "Wi-Fi Signal Localization",
+        "BLE",
+        "WebSockets",
+        "Linux",
+        "QuickBooks API",
+        "EJS",
+        "Cookie-based Authentication",
+        "JWT Authentication",
+        "Search Engine Optimization (SEO)",
+        "Google SEO Tools",
+        "Playwright",
+        "AI Workflow Automation",
+        "LangGraph",
+        "CrewAI",
+        "LLM-Orchestrated Automation",
+        "SaaS Architecture",
+        "Multi-tenant SaaS Platforms",
+        "Small Business Workflow Automation",
+        "n8n (Workflow Automation)",
+        "Domain-Isolated RAG",
+        "AWS ECS",
+        "AWS Aurora (PostgreSQL)",
+        "AWS Application Load Balancer (ALB)",
+        "Multi-domain Backend Routing",
+        "Neo4j",
+        "Graph RAG",
+        "Streamlit",
+        "Simulation Workflow Optimization",
+        "React",
+        "Angular",
+        "Vite",
+        "OpenAI",
+        "Hugging Face",
+        "LangChain",
+        "PydanticAI",
+        "Ollama",
+        "PyTorch",
+        "TensorFlow",
+        "Salesforce",
+        "NetSuite",
+        "SOC 2",
+        "Large Language Models (LLMs)"
+    ],
+    "focused_skills": [
+        "Full Stack Development",
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Java",
+        "React",
+        "Next.js",
+        "Node.js",
+        "Django",
+        "REST APIs",
+        "SQL",
+        "PostgreSQL",
+        "MongoDB",
+        "AWS",
+        "Docker",
+        "CI/CD",
+        "DevOps",
+        "Linux",
+        "Large Language Models (LLMs)",
+        "Retrieval-Augmented Generation (RAG)",
+        "Agentic AI",
+        "AI Workflow Automation",
+        "SaaS Architecture",
+        "Multi-tenant SaaS",
+        "Flutter",
+        "React Native"
+    ],
+    "focused_roles": [
+        "Software Engineer",
+        "Software Developer",
+        "Full Stack Engineer",
+        "Full Stack Developer",
+        "Full Stack Software Engineer",
+        "Backend Engineer",
+        "Backend Developer",
+        "Backend Software Engineer",
+        "Frontend Engineer",
+        "Frontend Developer",
+        "Frontend Software Engineer",
+        "Web Developer",
+        "Cloud Engineer",
+        "Cloud Software Engineer",
+        "DevOps Engineer",
+        "Platform Engineer",
+        "Site Reliability Engineer",
+        "Machine Learning Engineer",
+        "AI Engineer",
+        "Applied AI Engineer",
+        "Generative AI Engineer",
+        "LLM Engineer",
+        "AI Application Engineer",
+        "Mobile Engineer",
+        "Android Developer",
+        "Flutter Developer",
+        "React Native Developer",
+        "SaaS Engineer",
+        "Product Engineer"
+    ],
+    "role_buckets": [
+        "Software Engineer / Software Development Engineer (SWE / SDE)",
+        "Full Stack Software Engineer",
+        "Backend Software Engineer",
+        "AI / ML / Generative AI / LLM Engineer",
+        "Cloud / DevOps / Platform Engineer",
+        "Mobile Engineer",
+        "Product / SaaS Engineer"
+    ],
+    "companies": [
+        {
+            "role": "Full Stack Developer",
+            "company_name": "Epitome Research And Innovation Inc.",
+            "from_month": "09",
+            "from_year": 2024,
+            "to_month": null,
+            "to_year": null,
+            "duration": "1 year 4 months",
+            "experience_points": [
+                "Developed a multi-tenant SaaS \"super app\" for small businesses using Next.js, React and Django REST APIs.",
+                "Implemented Python backend services with Django and Flask to power portals, simulations and internal tools.",
+                "Designed relational schemas in PostgreSQL and Amazon Aurora to support multi-tenant data isolation.",
+                "Containerized backend services with Docker and deployed them on AWS ECS for reliable, scalable hosting.",
+                "Configured an AWS Application Load Balancer to route traffic for 5 different customer domains from a single codebase.",
+                "Set up CI/CD pipelines with AWS CodeBuild and CodePipeline to automate build, test and deployment.",
+                "Hosted static marketing and portal assets on Amazon S3 to reduce server load and simplify deployments.",
+                "Implemented domain-isolated RAG and agentic AI flows using OpenAI, Hugging Face, LangChain, LangGraph, CrewAI and PydanticAI so each tenant only queried its own document set.",
+                "Experimented with multiple LLM runtimes and providers, including Ollama, Google AI SDKs/APIs, PyTorch and TensorFlow, to benchmark model quality, latency and cost for production use.",
+                "Applied prompt engineering best practices and built reusable Python utilities to standardize prompts and evaluate LLM responses.",
+                "Automated onboarding and document workflows in n8n using webhooks and integrations with backend services.",
+                "Orchestrated end-to-end AI workflows with n8n, connecting RAG pipelines, external tools and APIs into automated agentic flows.",
+                "Maintained a simulation-heavy SaaS stack with a React frontend and Flask backend during commercialization, and built internal analysis tools in React, Streamlit and Flutter for domain experts.",
+                "Planned and executed migration paths from Flask with MongoDB to Django with PostgreSQL to standardize the backend.",
+                "Scripted AWS provisioning with Boto3 to manage EC2 instances, target groups and ALB rules as code.",
+                "Prototyped a Graph RAG pipeline in Neo4j to model entities and relationships for multi-hop question answering.",
+                "Implemented a BLE and WebSocket bridge between an Android app and a Windows robotic eye controller for real-time control.",
+                "Worked daily in Linux-based development and server environments for debugging and deployment.",
+                "Maintained SOC 2–aligned security for the SaaS platform by tightening access control and audit logging across AWS and application services."
+            ]
+        },
+        {
+            "role": "Associate Developer Intern",
+            "company_name": "Quotient Technologies Inc.",
+            "from_month": "12",
+            "from_year": 2021,
+            "to_month": "07",
+            "to_year": 2022,
+            "duration": "8 months",
+            "experience_points": [
+                "Built Dell Boomi processes to sync core Salesforce and NetSuite data so CRM and finance stayed aligned.",
+                "Configured Boomi workflows for Okta user provisioning, updates and offboarding to automate user lifecycle management.",
+                "Created reusable Boomi process templates from recurring integration patterns to speed up new integrations.",
+                "Helped orchestrate data pipelines with Apache Airflow to schedule and monitor recurring data jobs.",
+                "Wrote SQL transformations in Snowflake to prepare clean datasets for analytics and reporting.",
+                "Built an internal Node.js, Express and EJS web app so the team could view integration status and logs in one place."
+            ]
+        },
+        {
+            "role": "Founder & Lead Software Developer",
+            "company_name": "Confegure Techsols Pvt Ltd",
+            "from_month": "05",
+            "from_year": 2019,
+            "to_month": "12",
+            "to_year": 2021,
+            "duration": "2 years 7 months",
+            "experience_points": [
+                "Founded Confegure Techsols to deliver custom web, mobile and IoT software for small businesses and startups, operating it for 4 years.",
+                "Served 15+ clients and delivered 5+ custom software products from initial idea to production.",
+                "Built full-stack web apps for clients using React with Node.js and Express.",
+                "Built client dashboards and admin portals using React, Vite, Angular, HTML/CSS and JavaScript, backed by Node.js / Express.js and Java / Spring Boot APIs.",
+                "Developed additional backends in Django and Spring Boot when projects required those ecosystems.",
+                "Designed data models with PostgreSQL, MySQL and MongoDB to match each project's requirements.",
+                "Developed cross-platform mobile apps in Flutter to ship Android and iOS clients from a single codebase.",
+                "Implemented native Android features in Java and integrated them with Flutter apps when platform APIs were needed.",
+                "Shipped React Native apps for clients who preferred a JavaScript-based mobile stack.",
+                "Implemented an ESP32-based smart switch system using MQTT and a Flutter app to turn legacy switchboards into smart devices.",
+                "Deployed client projects on AWS EC2 with S3 and simple CI/CD scripts for reliable hosting and updates.",
+                "Created UI wireframes and interactive prototypes in Figma and Adobe XD to validate flows with clients.",
+                "Reviewed code and mentored junior developers and interns to maintain quality and share best practices.",
+                "Scoped projects, estimated effort and managed client communication from kickoff through delivery.",
+                "Launched Tic Trac, a movie ticket tracking app built with Flutter and Node.js, reaching 20,000+ downloads and tracking bookings across 1,000+ cities and 6,000+ screens.",
+                "Built Udhyogulu, an employee-focused news app, which achieved 15,000 downloads in a single day after launch.",
+                "Developed the Confegure startup website, which attracted 1,000+ visits and generated 10+ inbound leads in its first week.",
+                "Created the Red and Blue Appliance Repair website, whose SEO-optimized design helped generate 100+ leads in the first week after launch.",
+                "Released Reach Alert, a location-based alarm app, which achieved 2,000+ downloads with 100+ installs in the first month.",
+                "Built Lock Down Mart, a local-store e-commerce and virtual queue app recognized by the IT Ministry of Telangana and featured in a magazine."
+            ]
+        }
+    ],
+    "profile": {
+        "name": "Sumanth Bejugam",
+        "email": "sumanthbejugam@gmail.com",
+        "phone": "5714650804",
+        "linkedin": "https://linkedin.com/in/bejugamsumanth",
+        "github": "https://github.com/sumanthnani10",
+        "website": "https://sumanthbejugam.github.io/portfolio/",
+        "summary": "Full Stack Software Developer with 4+ years of experience building scalable web, mobile and IoT applications using Flutter, React, Node.js and Python. Proven track record of delivering production-ready solutions under tight deadlines, with tens of thousands of app downloads, enterprise usage and government-recognized projects. Founder of a tech startup and winner of multiple hackathons. Skilled in AWS-based cloud architectures, CI/CD, LLM/RAG integrations and BLE-based IoT systems. Known for rapid learning, clean architecture and cross-platform execution.",
+        "visa_status": "F1-STEM OPT",
+        "dob": "2001-04-20",
+        "gender": "Male",
+        "nationality": "Indian",
+        "languages": [
+            "English",
+            "Telugu",
+            "Hindi"
+        ],
+        "need_sponsorship": true,
+        "sponsorship_type": "H1B, O1",
+        "available": "Immediately",
+        "preferred_location": "Any",
+        "address": "7522 Mint Springs Ct",
+        "city": "Manassas",
+        "state": "Virginia",
+        "zip": "20109",
+        "country": "United States"
+    },
+    "education": [
+        {
+            "degree": "Master of Science (MS)",
+            "field_of_study": "Computer Science",
+            "institution": "George Mason University",
+            "location_city": "Fairfax",
+            "location_state": "Virginia",
+            "location_country": "United States",
+            "from_month": "August",
+            "from_year": 2022,
+            "to_month": "May",
+            "to_year": 2024,
+            "duration": "2 years",
+            "gpa": "3.68",
+            "notes": "Graduate coursework and projects in software engineering, AI/ML and distributed systems."
+        },
+        {
+            "degree": "Bachelor of Technology (B.Tech)",
+            "field_of_study": "Computer Science and Engineering (AI Specialization)",
+            "institution": "K L University",
+            "location_city": "Hyderabad",
+            "location_state": "Telangana",
+            "location_country": "India",
+            "from_month": "July",
+            "from_year": 2018,
+            "to_month": "April",
+            "to_year": 2022,
+            "duration": "4 years",
+            "gpa": "3.68",
+            "notes": "Specialization in Artificial Intelligence with projects in ML, DL and NLP."
+        }
+    ],
+    "projects": [
+        {
+            "name": "Small Business Services Super App (SaaS)",
+            "role": "Full Stack Developer",
+            "summary": "Multi-tenant SaaS web app that lets small business owners access bookkeeping, tax, company formation, marketing and expert consultation services from a single portal.",
+            "tech_stack": [
+                "Next.js",
+                "React",
+                "Django",
+                "Python",
+                "PostgreSQL",
+                "Amazon Aurora",
+                "AWS ECS",
+                "AWS ALB",
+                "AWS S3",
+                "Docker",
+                "AWS CodeBuild",
+                "AWS CodePipeline",
+                "n8n",
+                "CrewAI",
+                "LLMs"
+            ],
+            "highlights": [
+                "Designed and built the application end to end as the sole full stack developer.",
+                "Implemented multi-tenant data isolation using PostgreSQL and Amazon Aurora.",
+                "Integrated a domain-isolated RAG chatbot so each customer instance only answers from its own documents.",
+                "Automated onboarding and document workflows with n8n, reducing manual steps for internal teams.",
+                "Deployed the system on AWS ECS behind an Application Load Balancer with CI/CD via CodeBuild and CodePipeline."
+            ],
+            "links": {
+                "github": "",
+                "live_demo": "https://bizserveus.com",
+                "store_link": ""
+            }
+        },
+        {
+            "name": "Simulation SaaS Platform Modernization",
+            "role": "Full Stack Developer",
+            "summary": "Commercialization of a simulation-heavy SaaS platform by stabilizing the existing stack and planning a migration from Flask + MongoDB to Django + PostgreSQL on AWS.",
+            "tech_stack": [
+                "React",
+                "Flask",
+                "Django",
+                "MongoDB",
+                "PostgreSQL",
+                "AWS EC2",
+                "AWS ALB",
+                "Boto3"
+            ],
+            "highlights": [
+                "Maintained a React + Flask + MongoDB stack during early customer onboarding.",
+                "Helped design migration paths from MongoDB to PostgreSQL to standardize storage.",
+                "Used Boto3 to script provisioning of EC2 instances, target groups and ALB rules for multiple customer domains."
+            ],
+            "links": {
+                "github": "",
+                "live_demo": "https://febioonthecloud.com",
+                "store_link": ""
+            }
+        },
+        {
+            "name": "Tic Trac – Movie Ticket Booking Tracker",
+            "role": "Founder & Lead Developer",
+            "summary": "Android and Flutter-based app that tracks movie ticket bookings and alerts users as soon as bookings open for selected movies, theatres and dates.",
+            "tech_stack": [
+                "Flutter",
+                "Android",
+                "Java",
+                "Node.js"
+            ],
+            "highlights": [
+                "Reached 20,000+ downloads with high engagement from movie-goers.",
+                "Tracked bookings for 6,000+ screens across 1,000+ cities.",
+                "Implemented background tracking so users receive alerts even when the app is closed.",
+                "Supported phone-number login for 200+ country codes to serve international users."
+            ],
+            "links": {
+                "github": "",
+                "live_demo": "",
+                "store_link": "https://bit.ly/tcTrc"
+            }
+        },
+        {
+            "name": "Lock Down Mart – Local Store E-commerce & Queueing",
+            "role": "Full Stack Mobile Developer",
+            "summary": "Pair of Android apps that let local grocery stores sell online and manage virtual queues so customers can shop safely during COVID-19 lockdowns.",
+            "tech_stack": [
+                "Flutter",
+                "Dart",
+                "Google Maps API",
+                "Firebase"
+            ],
+            "highlights": [
+                "Implemented store owner and customer apps with real-time order tracking.",
+                "Used Google Maps for user and store locations to plan pickups and deliveries.",
+                "Recognized by the IT Ministry of Telangana and featured in a local magazine."
+            ],
+            "links": {
+                "github": "",
+                "live_demo": "",
+                "store_link": ""
+            }
+        },
+        {
+            "name": "Reach Alert – Location-Based Alarm App",
+            "role": "Android Developer",
+            "summary": "Android alarm app that triggers when a user enters a configured radius around a chosen location instead of at a specific time.",
+            "tech_stack": [
+                "Android",
+                "Java",
+                "Google Maps API",
+                "Firebase"
+            ],
+            "highlights": [
+                "Reached 2,000+ downloads with 100+ installs in the first month.",
+                "Implemented background location tracking so alerts fire even when the app is closed.",
+                "Allowed users to configure radius-based alerts between 500m and 5km."
+            ],
+            "links": {
+                "github": "",
+                "live_demo": "",
+                "store_link": "https://play.google.com/store/apps/details?id=com.ismartapps.reachalert"
+            }
+        },
+        {
+            "name": "Oil Seed and Pests Hub",
+            "role": "Full Stack Developer",
+            "summary": "Web application for the Telangana State Government Oil Seed and Pests Research Organization to store and view detailed oil seed and pest data.",
+            "tech_stack": [
+                "Flutter",
+                "PHP",
+                "Linux"
+            ],
+            "highlights": [
+                "Implemented secure modules for uploading and viewing oil seed and pest information.",
+                "Designed a responsive UI so researchers can access data from any device.",
+                "Received appraisal and a certificate from TSIIOR for the project."
+            ],
+            "links": {
+                "github": "",
+                "live_demo": "",
+                "store_link": ""
+            }
+        },
+        {
+            "name": "Confegure Website",
+            "role": "Frontend Developer",
+            "summary": "Portfolio website for Confegure Techsols to showcase services, projects and contact options.",
+            "tech_stack": [
+                "React",
+                "AWS EC2"
+            ],
+            "highlights": [
+                "Attracted 1,000+ visits and generated 10+ inbound leads in the first week after launch.",
+                "Implemented seamless UX with FAQs, social media integration and analytics tracking.",
+                "Migrated the site from Flutter to React for improved maintainability."
+            ],
+            "links": {
+                "github": "",
+                "live_demo": "https://confegure.com",
+                "store_link": ""
+            }
+        },
+        {
+            "name": "Red and Blue Appliance Repair Website",
+            "role": "Full Stack Developer",
+            "summary": "Responsive marketing website for an appliance repair company with a clear services listing and contact form.",
+            "tech_stack": [
+                "HTML",
+                "CSS",
+                "Bootstrap",
+                "JavaScript",
+                "Figma",
+                "Adobe XD",
+                "SEO"
+            ],
+            "highlights": [
+                "Generated 100+ leads in the first week after launch through SEO-focused content and structure.",
+                "Designed the UI and UX from wireframes to final implementation.",
+                "Integrated a third-party contact form solution for quick customer inquiries."
+            ],
+            "links": {
+                "github": "",
+                "live_demo": "",
+                "store_link": ""
+            }
+        },
+        {
+            "name": "Bright Star Non Medical Transport Service Website",
+            "role": "Frontend Developer",
+            "summary": "Responsive website for an ambulance and non-medical transport service provider.",
+            "tech_stack": [
+                "HTML",
+                "CSS",
+                "Bootstrap",
+                "JavaScript",
+                "Figma",
+                "Adobe XD"
+            ],
+            "highlights": [
+                "Showcased all transport services with clear CTAs for booking and inquiries.",
+                "Designed the UX and UI to work well on both desktop and mobile devices.",
+                "Collaborated with a team of 5 to deliver the site end to end."
+            ],
+            "links": {
+                "github": "",
+                "live_demo": "",
+                "store_link": ""
+            }
+        },
+        {
+            "name": "Intelli Switch – ESP32 Smart Switch Module",
+            "role": "IoT & Mobile Developer",
+            "summary": "ESP32-based module and mobile app that convert existing switchboards into smart switches controllable over the internet.",
+            "tech_stack": [
+                "ESP32",
+                "C++",
+                "Arduino",
+                "MQTT",
+                "Mosquitto",
+                "Flutter",
+                "Node.js",
+                "MongoDB",
+                "Firebase Auth",
+                "AWS EC2"
+            ],
+            "highlights": [
+                "Designed the firmware, MQTT protocol and mobile app for safe, cost-effective home automation.",
+                "Built a Flutter app to control switches remotely and manage schedules.",
+                "Implemented a Node.js backend with MongoDB and Firebase Auth for device and user management."
+            ],
+            "links": {
+                "github": "",
+                "live_demo": "",
+                "store_link": ""
+            }
+        },
+        {
+            "name": "Laptop Tracking / Localization Module",
+            "role": "Research Developer",
+            "summary": "Python module that estimates laptop location inside a building using Wi-Fi signal strengths.",
+            "tech_stack": [
+                "Python",
+                "Pandas",
+                "NumPy",
+                "PyWiFi",
+                "Machine Learning"
+            ],
+            "highlights": [
+                "Achieved location estimates with a minimal error of around 5 meters.",
+                "Designed the data collection protocol and performed multiple rounds of data gathering.",
+                "Explored different ML methods and feature selection approaches to improve accuracy.",
+                "Received an A grade for the project."
+            ],
+            "links": {
+                "github": "",
+                "live_demo": "",
+                "store_link": ""
+            }
+        }
+    ],
+    "screening_defaults": {
+        "eligible_to_work_in_us": true,
+        "need_sponsorship_now": true,
+        "need_sponsorship_future": true,
+        "willing_to_relocate": true,
+        "willing_to_work_remote": true,
+        "willing_to_background_check": true,
+        "willing_to_drug_test": true,
+        "previously_employed_at_target_company": false,
+        "conflicts_of_interest": false
+    },
+    "certifications": [
+        {
+            "name": "Introduction to Self-Driving Cars",
+            "issuer": "Coursera - University of Toronto",
+            "month": "03",
+            "year": 2022
+        },
+        {
+            "name": "Machine Learning with Python",
+            "issuer": "Coursera - IBM Skills Network",
+            "month": "11",
+            "year": 2020
+        },
+        {
+            "name": "Neural Networks and Deep Learning",
+            "issuer": "Coursera - DeepLearning.AI",
+            "month": "11",
+            "year": 2020
+        },
+        {
+            "name": "Search Engine Optimization (SEO) Specialization",
+            "issuer": "Coursera - University of California, Davis",
+            "month": "11",
+            "year": 2021
+        },
+        {
+            "name": "The Digital Marketing Revolution",
+            "issuer": "Coursera - University of Illinois at Urbana-Champaign",
+            "month": "04",
+            "year": 2022
+        },
+        {
+            "name": "Boomi Associate Developer Certification 2022",
+            "issuer": "Boomi",
+            "month": "02",
+            "year": 2022
+        },
+        {
+            "name": "Certified Cloud Security Professional (CCSP) – Training",
+            "issuer": "Simplilearn",
+            "month": "07",
+            "year": 2021
+        },
+        {
+            "name": "CISSP – Certified Information Systems Security Professional (Training)",
+            "issuer": "Simplilearn",
+            "month": "07",
+            "year": 2021
+        },
+        {
+            "name": "CompTIA Security+ (SY0-601) – Training",
+            "issuer": "Simplilearn",
+            "month": "07",
+            "year": 2021
+        },
+        {
+            "name": "CISM 2018 – Training",
+            "issuer": "Simplilearn",
+            "month": "07",
+            "year": 2021
+        },
+        {
+            "name": "Cyber Security Expert Master Program",
+            "issuer": "Simplilearn",
+            "month": "07",
+            "year": 2021
+        },
+        {
+            "name": "Introduction to Cybersecurity",
+            "issuer": "Simplilearn",
+            "month": "07",
+            "year": 2021
+        },
+        {
+            "name": "Artificial Intelligence Foundations",
+            "issuer": "SkillUp Online",
+            "month": "07",
+            "year": 2021
+        },
+        {
+            "name": "HCIA-5G Course",
+            "issuer": "Huawei Talent Online",
+            "month": "07",
+            "year": 2021
+        },
+        {
+            "name": "HCIA-AI Course",
+            "issuer": "Huawei Talent Online",
+            "month": "07",
+            "year": 2021
+        }
+    ],
+    "achievements": [
+        {
+            "title": "Tic Trac – 20,000+ downloads",
+            "description": "Launched and scaled a movie ticket tracking app that crossed 20,000+ downloads.",
+            "month": "",
+            "year": 0
+        },
+        {
+            "title": "Winner – University Hackathon",
+            "description": "Won a university-level hackathon for a software project.",
+            "month": "",
+            "year": 0
+        },
+        {
+            "title": "Winner – Inter-University Hackathon",
+            "description": "Won an inter-university hackathon competing against teams from multiple colleges.",
+            "month": "",
+            "year": 0
+        }
+    ]
+}
