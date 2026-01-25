@@ -1,9 +1,10 @@
 import { SiReact, SiNodedotjs, SiPython, SiAwsamplify, SiMongodb, SiPostgresql, SiFlutter, SiFlask, SiAndroid, SiKotlin } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import { BiLogoFirebase, BiLogoSpringBoot } from "react-icons/bi";
-import tictracImg from "../../../assets/tictrac.png";
-import reachAlertImg from "../../../assets/reachAlert.png";
-import intelliSwitchImg from "../../../assets/intelliSwitch.png";
+// Image assets from public directory
+const tictracImg = "/assets/tictrac.png";
+const reachAlertImg = "/assets/reachAlert.png";
+const intelliSwitchImg = "/assets/intelliSwitch.png";
 
 export const RESUME_DATA = {
   name: "Sumanth Bejugam",
@@ -11,7 +12,7 @@ export const RESUME_DATA = {
   email: "sumanthbejugam@gmail.com",
   phone: "+1 (571) 465-0804",
   linkedin: "linkedin.com/in/bejugamsumanth",
-  resume: "https://docs.google.com/document/d/1BoZY861g5Nf2n2I8JocuRtocq2DD59XpwSirYFFa_Nk/edit?tab=t.0",
+  resume: "https://docs.google.com/document/d/1pv7qBODUqVrOBGXt8pZVGLqWUn-_rfy2awr9ZV-s2lE/preview",
   summary: "Full-stack developer with 4+ years of experience building and deploying scalable web applications using React, Node.js, Java, Python, SQL, and MongoDB. Skilled in API development, AWS integration, and leading cross-functional teams to deliver high-quality solutions. Passionate about leveraging technology to solve real-world problems and crafting seamless user experiences—committed to perfection."
 };
 

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaEnvelope, FaLinkedin, FaFileAlt } from "react-icons/fa";
+import { ResumeDialog } from "@/components/resume-dialog";
 
 const InfoSection = () => {
     return (
@@ -62,18 +63,17 @@ const InfoSection = () => {
                         </div>
                     </a>
 
-                    <a
-                        href="https://docs.google.com/document/d/1pv7qBODUqVrOBGXt8pZVGLqWUn-_rfy2awr9ZV-s2lE/edit?usp=sharing"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-6 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 shadow-xl hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center gap-4"
-                    >
-                        <FaFileAlt className="text-4xl text-white/80 group-hover:text-white transition-colors" />
-                        <div>
-                            <h3 className="text-2xl font-semibold text-white mb-2">Resume</h3>
-                            <p className="text-gray-400 text-sm group-hover:text-gray-200 transition-colors">View my CV</p>
-                        </div>
-                    </a>
+                    <ResumeDialog>
+                        <button
+                            className="w-full h-full p-6 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 shadow-xl hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center gap-4 cursor-pointer"
+                        >
+                            <FaFileAlt className="text-4xl text-white/80 group-hover:text-white transition-colors" />
+                            <div>
+                                <h3 className="text-2xl font-semibold text-white mb-2">Resume</h3>
+                                <p className="text-gray-400 text-sm group-hover:text-gray-200 transition-colors">View my CV</p>
+                            </div>
+                        </button>
+                    </ResumeDialog>
                 </motion.div>
 
                 <footer className="text-center text-sm text-white/30 pt-20">
