@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Lenis from "lenis";
 import Loader from "./components/Loader";
 import MainExperience from "./components/MainExperience";
+import TimelineSection from "./components/sections/TimelineSection";
 import InfoSection from "./components/sections/InfoSection";
 import { allFrames } from "./utils/asset-manifest";
 
@@ -76,6 +77,7 @@ function App() {
 
       <main className={`opacity-0 transition-opacity duration-1000 ${!isLoading ? "opacity-100" : ""}`}>
         <MainExperience />
+        <TimelineSection />
         <InfoSection />
       </main>
     </div>

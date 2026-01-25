@@ -36,7 +36,7 @@ export const EXPERIENCE_DATA = [
     title: "Associate Developer",
     company: "Quotient Technologies Inc",
     location: "Bengaluru, India",
-    period: "Dec 2021 – June 2022",
+    period: "Dec 2021 – July 2022",
     achievements: [
       "Formulated an error - free Boomi Integration Flow for synchronizing data between Salesforce and NetSuite. ",
       "Upgraded flows for REST Endpoint and Employee Off- boarding in Okta, reducing the process time by 90 %.",
@@ -47,7 +47,7 @@ export const EXPERIENCE_DATA = [
     title: "Software Developer",
     company: "Confegure Techsols Pvt Ltd",
     location: "Hyderabad, India",
-    period: "May 2020 – May 2024",
+    period: "May 2019 – Dec 2021",
     achievements: [
       "Initiated a full - stack web application using the MERN stack, lowering bug fix rates by 25 %, which progressed user base.",
       "Crafted a high - performance web application using Flutter for web, reducing load times by 30% and cutting development cycles by 35%, which increased user experience and engagement.",
@@ -109,4 +109,14 @@ export const PROJECTS_DATA = [
     image: intelliSwitchImg,
     url: "/"
   },
+];
+
+export const EDUCATION_DATA = [
+  {
+    institution: "George Mason University",
+    location: "Fairfax, VA",
+    period: "2022 - 2024",
+    degree: "Master's Degree",
+    subject: "Computer Science"
+  }
 ];

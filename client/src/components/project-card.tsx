@@ -21,7 +21,7 @@ export default function ProjectCard({ title, description, technologies, metrics,
       className="h-full group"
     >
       <a href={url} target="_blank" rel="noreferrer" className="block h-full">
-        <Card className="h-full flex flex-col overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-2">
+        <Card className="h-full flex flex-col overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-2 rounded-md">
           {imageUrl && (
             <div className="relative w-full h-56 overflow-hidden">
               <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

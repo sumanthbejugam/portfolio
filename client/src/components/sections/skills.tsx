@@ -14,11 +14,11 @@ export default function Skills() {
           variants={staggerChildren}
         >
           <h2 className="text-3xl font-bold text-center mb-12">Skills & Technologies</h2>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {SKILLS_DATA.technologies.map((tech, index) => (
               <motion.div key={tech.name} variants={scaleIn}>
-                <Card>
+                <Card className="rounded-md">
                   <CardContent className="flex flex-col items-center justify-center p-6">
                     <tech.icon className="h-12 w-12 mb-4" />
                     <span className="font-medium">{tech.name}</span>
@@ -32,14 +32,14 @@ export default function Skills() {
             <h3 className="text-xl font-semibold mb-6">Certifications</h3>
             <ul className="justify-center gap-4">
               {SKILLS_DATA.certifications.map((cert, index) => (
-              <motion.li
-              key={index}
-              variants={scaleIn}
-              className="flex items-center gap-2"
-              >
-              <span className="h-2 w-2 rounded-full bg-primary" />
-              {cert}
-              </motion.li>
+                <motion.li
+                  key={index}
+                  variants={scaleIn}
+                  className="flex items-center gap-2"
+                >
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  {cert}
+                </motion.li>
               ))}
             </ul>
           </div>

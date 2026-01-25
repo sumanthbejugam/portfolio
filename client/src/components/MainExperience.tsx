@@ -24,7 +24,7 @@ const SplitGlassCard = ({ title, subtitle, skills, projects, color }: { title: s
     const [activeTab, setActiveTab] = useState<'skills' | 'projects'>('skills');
 
     const ProjectItem = ({ project, color }: { project: string, color: string }) => (
-        <li className="group flex items-center justify-between gap-4 text-sm md:text-base text-gray-300 bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 p-4 rounded-xl transition-all duration-300 cursor-pointer">
+        <li className="group flex items-center justify-between gap-4 text-sm md:text-base text-gray-300 bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 p-4 rounded-md transition-all duration-300 cursor-pointer">
             <div className="flex items-center gap-3">
                 <span className={`w-2 h-8 rounded-full bg-gradient-to-b ${color}`} />
                 <span className="font-medium group-hover:text-white transition-colors">{project}</span>
@@ -38,7 +38,7 @@ const SplitGlassCard = ({ title, subtitle, skills, projects, color }: { title: s
     return (
         <div className="w-full max-w-[95%] md:max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-16 pointer-events-none">
             {/* Mobile View: Unified Card with Tabs */}
-            <div className="md:hidden w-full p-6 rounded-2xl backdrop-blur-xl bg-black/40 border border-white/10 shadow-2xl pointer-events-auto flex flex-col">
+            <div className="md:hidden w-full p-6 rounded-lg backdrop-blur-xl bg-black/40 border border-white/10 shadow-2xl pointer-events-auto flex flex-col">
                 <div className="mb-6">
                     <h2 className={`text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r ${color}`}>
                         {title}
@@ -52,13 +52,13 @@ const SplitGlassCard = ({ title, subtitle, skills, projects, color }: { title: s
                 <div className="flex p-1 bg-white/5 rounded-xl mb-6 relative border border-white/5">
                     <button
                         onClick={() => setActiveTab('skills')}
-                        className={`flex-1 py-2.5 text-sm font-medium rounded-lg transition-all duration-300 ${activeTab === 'skills' ? 'bg-white/10 text-white shadow-lg' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
+                        className={`flex-1 py-2.5 text-sm font-medium rounded-md transition-all duration-300 ${activeTab === 'skills' ? 'bg-white/10 text-white shadow-lg' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
                     >
                         Key Skills
                     </button>
                     <button
                         onClick={() => setActiveTab('projects')}
-                        className={`flex-1 py-2.5 text-sm font-medium rounded-lg transition-all duration-300 ${activeTab === 'projects' ? 'bg-white/10 text-white shadow-lg' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
+                        className={`flex-1 py-2.5 text-sm font-medium rounded-md transition-all duration-300 ${activeTab === 'projects' ? 'bg-white/10 text-white shadow-lg' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
                     >
                         Projects
                     </button>
@@ -69,7 +69,7 @@ const SplitGlassCard = ({ title, subtitle, skills, projects, color }: { title: s
                     {activeTab === 'skills' ? (
                         <div className="flex flex-wrap gap-2 animate-in fade-in slide-in-from-bottom-2 duration-300">
                             {skills.map((skill, i) => (
-                                <span key={i} className="px-3 py-2 text-xs rounded-lg bg-white/5 text-white/90 border border-white/10 flex items-center gap-2.5">
+                                <span key={i} className="px-3 py-2 text-xs rounded-md bg-white/5 text-white/90 border border-white/10 flex items-center gap-2.5">
                                     <skill.icon className="text-sm opacity-80" />
                                     {skill.name}
                                 </span>
@@ -86,7 +86,7 @@ const SplitGlassCard = ({ title, subtitle, skills, projects, color }: { title: s
             </div>
 
             {/* Desktop View: Left Card (Title, Subtitle, Skills) */}
-            <div className={`hidden md:flex flex-1 p-8 rounded-3xl backdrop-blur-xl bg-black/40 border border-white/10 shadow-2xl pointer-events-auto hover:bg-black/50 transition-colors duration-300 self-stretch flex-col justify-center`}>
+            <div className={`hidden md:flex flex-1 p-8 rounded-lg backdrop-blur-xl bg-black/40 border border-white/10 shadow-2xl pointer-events-auto hover:bg-black/50 transition-colors duration-300 self-stretch flex-col justify-center`}>
                 <h2 className={`text-5xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r ${color}`}>
                     {title}
                 </h2>
@@ -97,7 +97,7 @@ const SplitGlassCard = ({ title, subtitle, skills, projects, color }: { title: s
                     <h3 className="text-sm font-semibold text-white/50 uppercase tracking-wider mb-4">Key Skills</h3>
                     <div className="flex flex-wrap gap-3">
                         {skills.map((skill, i) => (
-                            <span key={i} className="px-4 py-2 text-sm rounded-xl bg-white/5 text-white/90 border border-white/10 flex items-center gap-2 hover:bg-white/10 hover:border-white/30 transition-all duration-300 cursor-default">
+                            <span key={i} className="px-4 py-2 text-sm rounded-md bg-white/5 text-white/90 border border-white/10 flex items-center gap-2 hover:bg-white/10 hover:border-white/30 transition-all duration-300 cursor-default">
                                 <skill.icon className="text-lg opacity-80" />
                                 {skill.name}
                             </span>
@@ -107,7 +107,7 @@ const SplitGlassCard = ({ title, subtitle, skills, projects, color }: { title: s
             </div>
 
             {/* Desktop View: Right Card (Projects) */}
-            <div className={`hidden md:flex flex-1 p-8 rounded-3xl backdrop-blur-xl bg-black/40 border border-white/10 shadow-2xl pointer-events-auto hover:bg-black/50 transition-colors duration-300 self-stretch flex-col justify-center`}>
+            <div className={`hidden md:flex flex-1 p-8 rounded-lg backdrop-blur-xl bg-black/40 border border-white/10 shadow-2xl pointer-events-auto hover:bg-black/50 transition-colors duration-300 self-stretch flex-col justify-center`}>
                 <h3 className="text-sm font-semibold text-white/50 uppercase tracking-wider mb-6">Featured Projects</h3>
                 <ul className="space-y-4">
                     {projects.map((project, i) => (
