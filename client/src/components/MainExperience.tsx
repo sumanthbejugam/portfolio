@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import UnifiedScrollRenderer from "./canvas/UnifiedScrollRenderer";
 import ScrollTextOverlay from "./canvas/ScrollTextOverlay";
@@ -18,43 +18,98 @@ interface SkillItem {
     icon: React.ElementType;
 }
 
-const SplitGlassCard = ({ title, subtitle, skills, projects, color }: { title: string, subtitle: string, skills: SkillItem[], projects: string[], color: string }) => (
-    <div className="w-full max-w-[90%] md:max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-32 pointer-events-none">
-        {/* Left Card: Title, Subtitle, Skills */}
-        <div className={`flex-1 p-6 md:p-8 rounded-2xl backdrop-blur-xl bg-black/40 border border-white/10 shadow-2xl pointer-events-auto hover:bg-black/50 transition-colors duration-300 self-stretch flex flex-col justify-center`}>
-            <h2 className={`text-3xl md:text-5xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r ${color}`}>
-                {title}
-            </h2>
-            <p className="text-lg md:text-xl text-gray-200 mb-6 font-light">
-                {subtitle}
-            </p>
-            <div>
-                <h3 className="text-sm font-semibold text-white/80 mb-3 border-b border-white/10 pb-2">Key Skills</h3>
-                <div className="flex flex-wrap gap-2">
-                    {skills.map((skill, i) => (
-                        <span key={i} className="px-3 py-1.5 text-xs md:text-sm rounded-full bg-white/10 text-white/90 border border-white/5 flex items-center gap-2 hover:bg-white/20 transition-colors">
-                            <skill.icon className="text-base" />
-                            {skill.name}
-                        </span>
-                    ))}
+const SplitGlassCard = ({ title, subtitle, skills, projects, color }: { title: string, subtitle: string, skills: SkillItem[], projects: string[], color: string }) => {
+    const [activeTab, setActiveTab] = useState<'skills' | 'projects'>('skills');
+
+    return (
+        <div className="w-full max-w-[95%] md:max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-32 pointer-events-none">
+            {/* Mobile View: Unified Card with Tabs */}
+            <div className="md:hidden w-full p-6 rounded-2xl backdrop-blur-xl bg-black/20 border border-white/10 shadow-2xl pointer-events-auto flex flex-col">
+                <div className="mb-6">
+                    <h2 className={`text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r ${color}`}>
+                        {title}
+                    </h2>
+                    <p className="text-sm text-gray-200 font-light leading-snug opacity-90">
+                        {subtitle}
+                    </p>
+                </div>
+
+                {/* Tabs */}
+                <div className="flex p-1 bg-white/5 rounded-xl mb-6 relative border border-white/5">
+                    <button
+                        onClick={() => setActiveTab('skills')}
+                        className={`flex-1 py-2.5 text-sm font-medium rounded-lg transition-all duration-300 ${activeTab === 'skills' ? 'bg-white/10 text-white shadow-lg' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
+                    >
+                        Key Skills
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('projects')}
+                        className={`flex-1 py-2.5 text-sm font-medium rounded-lg transition-all duration-300 ${activeTab === 'projects' ? 'bg-white/10 text-white shadow-lg' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
+                    >
+                        Projects
+                    </button>
+                </div>
+
+                {/* Content Area */}
+                <div className="min-h-[220px] max-h-[40vh] overflow-y-auto pr-2 custom-scrollbar">
+                    {activeTab === 'skills' ? (
+                        <div className="flex flex-wrap gap-2 animate-in fade-in slide-in-from-bottom-2 duration-300">
+                            {skills.map((skill, i) => (
+                                <span key={i} className="px-3 py-2 text-xs rounded-lg bg-white/5 text-white/90 border border-white/10 flex items-center gap-2.5">
+                                    <skill.icon className="text-sm opacity-80" />
+                                    {skill.name}
+                                </span>
+                            ))}
+                        </div>
+                    ) : (
+                        <ul className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
+                            {projects.map((project, i) => (
+                                <li key={i} className="flex items-start gap-3 text-sm text-gray-300 leading-relaxed p-2 rounded-lg hover:bg-white/5 transition-colors">
+                                    <span className={`mt-1.5 w-1.5 h-1.5 shrink-0 rounded-full bg-gradient-to-r ${color}`} />
+                                    {project}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                 </div>
             </div>
-        </div>
 
-        {/* Right Card: Projects */}
-        <div className={`flex-1 p-6 md:p-8 rounded-2xl backdrop-blur-xl bg-black/40 border border-white/10 shadow-2xl pointer-events-auto hover:bg-black/50 transition-colors duration-300 self-stretch flex flex-col justify-center`}>
-            <h3 className="text-xl font-semibold text-white/80 mb-4 border-b border-white/10 pb-2">Featured Projects</h3>
-            <ul className="space-y-4">
-                {projects.map((project, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm md:text-base text-gray-300">
-                        <span className={`mt-1.5 w-2 h-2 shrink-0 rounded-full bg-gradient-to-r ${color}`} />
-                        {project}
-                    </li>
-                ))}
-            </ul>
+            {/* Desktop View: Left Card (Title, Subtitle, Skills) */}
+            <div className={`hidden md:flex flex-1 p-8 rounded-2xl backdrop-blur-xl bg-black/40 border border-white/10 shadow-2xl pointer-events-auto hover:bg-black/50 transition-colors duration-300 self-stretch flex-col justify-center`}>
+                <h2 className={`text-5xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r ${color}`}>
+                    {title}
+                </h2>
+                <p className="text-xl text-gray-200 mb-6 font-light">
+                    {subtitle}
+                </p>
+                <div>
+                    <h3 className="text-sm font-semibold text-white/80 mb-3 border-b border-white/10 pb-2">Key Skills</h3>
+                    <div className="flex flex-wrap gap-2">
+                        {skills.map((skill, i) => (
+                            <span key={i} className="px-3 py-1.5 text-sm rounded-full bg-white/10 text-white/90 border border-white/5 flex items-center gap-2 hover:bg-white/20 transition-colors">
+                                <skill.icon className="text-base" />
+                                {skill.name}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* Desktop View: Right Card (Projects) */}
+            <div className={`hidden md:flex flex-1 p-8 rounded-2xl backdrop-blur-xl bg-black/40 border border-white/10 shadow-2xl pointer-events-auto hover:bg-black/50 transition-colors duration-300 self-stretch flex-col justify-center`}>
+                <h3 className="text-xl font-semibold text-white/80 mb-4 border-b border-white/10 pb-2">Featured Projects</h3>
+                <ul className="space-y-4">
+                    {projects.map((project, i) => (
+                        <li key={i} className="flex items-start gap-3 text-base text-gray-300">
+                            <span className={`mt-1.5 w-2 h-2 shrink-0 rounded-full bg-gradient-to-r ${color}`} />
+                            {project}
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 const MainExperience = () => {
     // We create the ref here and pass it to both the Renderer (for useScroll) and Overlays

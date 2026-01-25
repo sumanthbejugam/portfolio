@@ -38,9 +38,14 @@ const ScrollTextOverlay = ({ showRange, children, containerRef }: ScrollTextOver
         isStart ? [0, 0, 0, -50] : [50, 0, 0, -50]
     );
 
+    const visibility = useTransform(
+        scrollYProgress,
+        (val) => (val >= start && val <= end) ? "visible" : "hidden"
+    );
+
     return (
         <motion.div
-            style={{ opacity, y, pointerEvents: "none" }}
+            style={{ opacity, y, visibility, pointerEvents: "none" }}
             className="absolute inset-0 flex items-center justify-center z-10 p-8"
         >
             {children}
