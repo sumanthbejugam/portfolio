@@ -4,9 +4,10 @@ import { useEffect, useRef, useState } from "react";
 interface UnifiedScrollRendererProps {
     imagePaths: string[];
     containerRef?: React.RefObject<HTMLElement>;
+    isMobile?: boolean;
 }
 
-const UnifiedScrollRenderer = ({ imagePaths, containerRef }: UnifiedScrollRendererProps) => {
+const UnifiedScrollRenderer = ({ imagePaths, containerRef, isMobile = false }: UnifiedScrollRendererProps) => {
     const localRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const targetRef = containerRef || localRef; // Use external ref if provided
@@ -20,8 +21,15 @@ const UnifiedScrollRenderer = ({ imagePaths, containerRef }: UnifiedScrollRender
         offset: ["start start", "end end"],
     });
 
-    // Map scroll (0 to 1) to image index (0 to length - 1)
-    const frameIndex = useTransform(scrollYProgress, [0, 1], [0, imagePaths.length - 1]);
+    const maxIndex = imagePaths.length - 1;
+
+    // Frame Mapping Logic
+    // Mobile: 1:1 sync up to 75%, then accelerate to finish at 90%, holding 10% buffer
+    // Desktop: Standard 0-1 mapping
+    const inputRange = isMobile ? [0, 0.75, 0.9, 1] : [0, 1];
+    const outputRange = isMobile ? [0, 0.75 * maxIndex, maxIndex, maxIndex] : [0, maxIndex];
+
+    const frameIndex = useTransform(scrollYProgress, inputRange, outputRange);
 
     // Preload Images
     useEffect(() => {

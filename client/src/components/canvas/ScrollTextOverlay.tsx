@@ -6,9 +6,10 @@ interface ScrollTextOverlayProps {
     showRange: [number, number];
     children: React.ReactNode;
     containerRef: React.RefObject<HTMLDivElement>;
+    noExitAnimation?: boolean;
 }
 
-const ScrollTextOverlay = ({ showRange, children, containerRef }: ScrollTextOverlayProps) => {
+const ScrollTextOverlay = ({ showRange, children, containerRef, noExitAnimation = false }: ScrollTextOverlayProps) => {
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"],
@@ -22,7 +23,7 @@ const ScrollTextOverlay = ({ showRange, children, containerRef }: ScrollTextOver
 
     const [start, end] = showRange;
     const fadeInEnd = start + ((end - start) * 0.2); // First 20% of range
-    const fadeOutStart = end - ((end - start) * 0.2); // Last 20% of range
+    const fadeOutStart = noExitAnimation ? end + 1 : end - ((end - start) * 0.2); // Last 20% of range (disabled if noExit)
 
     const isStart = start === 0;
 

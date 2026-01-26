@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import UnifiedScrollRenderer from "./canvas/UnifiedScrollRenderer";
 import ScrollTextOverlay from "./canvas/ScrollTextOverlay";
@@ -122,12 +122,24 @@ const SplitGlassCard = ({ title, subtitle, skills, projects, color }: { title: s
 const MainExperience = () => {
     // We create the ref here and pass it to both the Renderer (for useScroll) and Overlays
     const containerRef = useRef<HTMLDivElement>(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
     return (
         <div ref={containerRef} className="relative h-[1600vh] w-full bg-background">
             {/* The Sticky Canvas Renderer */}
             <div className="sticky top-0 h-screen w-full overflow-hidden">
-                <UnifiedScrollRenderer imagePaths={allFrames} containerRef={containerRef} />
+                <UnifiedScrollRenderer
+                    imagePaths={allFrames}
+                    containerRef={containerRef}
+                    isMobile={isMobile}
+                />
 
                 {/* Text Overlays Layer */}
                 {/* 0% - Intro */}
@@ -229,7 +241,7 @@ const MainExperience = () => {
                 </ScrollTextOverlay>
 
                 {/* 80% - IoT Development */}
-                <ScrollTextOverlay showRange={[0.78, 0.95]} containerRef={containerRef}>
+                <ScrollTextOverlay showRange={[0.78, 0.95]} containerRef={containerRef} noExitAnimation>
                     <SplitGlassCard
                         title="IoT & Edge Computing"
                         subtitle="Bridging Physical & Digital Worlds"
