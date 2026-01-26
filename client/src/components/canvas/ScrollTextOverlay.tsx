@@ -41,7 +41,12 @@ const ScrollTextOverlay = ({ showRange, children, containerRef, noExitAnimation 
 
     const visibility = useTransform(
         scrollYProgress,
-        (val) => (val >= start && val <= end) ? "visible" : "hidden"
+        (val) => {
+            if (noExitAnimation) {
+                return val >= start ? "visible" : "hidden";
+            }
+            return (val >= start && val <= end) ? "visible" : "hidden";
+        }
     );
 
     return (

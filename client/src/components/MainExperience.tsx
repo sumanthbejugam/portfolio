@@ -228,6 +228,7 @@ const MainExperience = () => {
                         color="from-purple-400 to-pink-300"
                         skills={[
                             { name: 'LLM Integration', icon: FaBrain },
+                            { name: 'RAG', icon: FaBrain },
                             { name: 'Agentic AI', icon: FaRobot },
                             { name: 'LangChain', icon: SiLangchain },
                             { name: 'CrewAI', icon: MdSmartToy },
