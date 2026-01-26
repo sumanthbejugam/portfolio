@@ -24,9 +24,9 @@ const UnifiedScrollRenderer = ({ imagePaths, containerRef, isMobile = false }: U
     const maxIndex = imagePaths.length - 1;
 
     // Frame Mapping Logic
-    // Mobile: 1:1 sync up to 75%, then accelerate to finish at 90%, holding 10% buffer
+    // Mobile: 1:1 sync up to 75%, then accelerate to finish at 95%, holding 5% buffer
     // Desktop: Standard 0-1 mapping
-    const inputRange = isMobile ? [0, 0.75, 0.9, 1] : [0, 1];
+    const inputRange = isMobile ? [0, 0.75, 1, 1] : [0, 1];
     const outputRange = isMobile ? [0, 0.75 * maxIndex, maxIndex, maxIndex] : [0, maxIndex];
 
     const frameIndex = useTransform(scrollYProgress, inputRange, outputRange);

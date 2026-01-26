@@ -201,7 +201,7 @@ const MainExperience = () => {
                 </ScrollTextOverlay>
 
                 {/* 40% - Mobile Development */}
-                <ScrollTextOverlay showRange={[0.38, 0.55]} containerRef={containerRef}>
+                <ScrollTextOverlay showRange={[0.38, 0.50]} containerRef={containerRef}>
                     <SplitGlassCard
                         title="Mobile Development"
                         subtitle="Native Performance, Cross-Platform Reach"
@@ -221,7 +221,7 @@ const MainExperience = () => {
                 </ScrollTextOverlay>
 
                 {/* 60% - AI Development */}
-                <ScrollTextOverlay showRange={[0.58, 0.75]} containerRef={containerRef}>
+                <ScrollTextOverlay showRange={[0.50, 0.70]} containerRef={containerRef}>
                     <SplitGlassCard
                         title="AI & ML Integration"
                         subtitle="Intelligent Workflows & Data Systems"
@@ -242,7 +242,7 @@ const MainExperience = () => {
                 </ScrollTextOverlay>
 
                 {/* 80% - IoT Development */}
-                <ScrollTextOverlay showRange={[0.78, 0.95]} containerRef={containerRef} noExitAnimation>
+                <ScrollTextOverlay showRange={[0.70, 0.95]} containerRef={containerRef} noExitAnimation>
                     <SplitGlassCard
                         title="IoT & Edge Computing"
                         subtitle="Bridging Physical & Digital Worlds"
