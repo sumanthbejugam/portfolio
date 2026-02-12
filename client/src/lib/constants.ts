@@ -169,3 +169,76 @@ export const EDUCATION_DATA = [
     subject: "Computer Science"
   }
 ];
+
+export const DEEP_DIVE_DATA = [
+  {
+    title: "Domain-Isolated RAG Architecture",
+    challenge: "A single application needed to act as **multiple chatbot agents** for distinct domains (e.g., Physiology vs Biology). The critical requirement was ensuring **zero knowledge leakage**—PDF context from one domain must never appear in another.",
+    solution: "Implemented an **Isolated RAG system** where knowledge bases are partitioned by domain keys using FAISS. A single codebase dynamically selects the correct vector store index based on the user's context, achieving **strict data isolation** while maintaining a unified infrastructure.",
+    technologies: ["RAG", "FAISS", "CrewAI", "LangChain", "Python"],
+    visualType: "code",
+    code: `def get_domain_context(query, domain_key):
+    # Load specific FAISS index for the domain
+    # 🔒 specific_db_path ensures total isolation
+    db = FAISS.load_local(
+        f"indexes/{domain_key}", 
+        embeddings,
+        allow_dangerous_deserialization=True
+    )
+    
+    # Search only within this isolated index
+    docs = db.similarity_search(query, k=3)
+    
+    return generate_agent_response(docs, context=domain_key)`
+  },
+  {
+    title: "On-Demand ML Infrastructure",
+    challenge: "The application required running **heavy biological simulations** that exceeded standard server capacities. Users needed the ability to **spin up temporary, project-based EC2 instances** on demand without manual intervention.",
+    solution: "Built an **automated infrastructure pipeline** using Boto3. When a user starts a simulation, the system programmatically launches an EC2 instance, assigns a public IP, creates **Elastic Load Balancer target groups**, and configures routing rules dynamically.",
+    technologies: ["AWS", "Boto3", "EC2", "ALB", "Flask"],
+    visualType: "code",
+    code: `import boto3
+
+def launch_simulation_node(project_id):
+    ec2 = boto3.client('ec2')
+    
+    # Spin up GPU-optimized instance dynamically
+    instance = ec2.run_instances(
+        ImageId='ami-0abcdef12345',
+        InstanceType='g4dn.xlarge', 
+        MinCount=1, MaxCount=1,
+        TagSpecifications=[{
+            'ResourceType': 'instance',
+            'Tags': [{'Key': 'Project', 'Value': project_id}]
+        }]
+    )
+    
+    # Auto-register with ALB for immediate traffic routing
+    register_target(instance['Instances'][0]['InstanceId'])`
+  },
+  {
+    title: "Multi-Domain Strategy Pattern",
+    challenge: "A single React codebase needed to serve **multiple distinct websites** simultaneously. Site A offers a suite of 5 tools, while Site B and Site C serve only specific subsets. The content and branding had to **dynamically adapt based on the requesting domain**.",
+    solution: "Implemented **URL-based resolution logic** at both the Load Balancer and Application level. The React app inspects the request headers to inject the correct configuration, effectively allowing **one build to power six different websites** with unique feature sets.",
+    technologies: ["React", "Django", "AWS ALB", "Vite"],
+    visualType: "code",
+    code: `// Domain Config Resolver
+const getSiteConfig = (hostname: string) => {
+  // 🌍 Dynamic Strategy Pattern
+  if (hostname.includes('specific-tool.com')) {
+     return {
+       mode: 'SINGLE_TOOL',
+       theme: 'dark',
+       features: ['sim_tool_v1']
+     };
+  }
+  
+  // Default to full platform suite
+  return {
+    mode: 'PLATFORM',
+    theme: 'system',
+    features: ['all']
+  };
+};`
+  }
+];
