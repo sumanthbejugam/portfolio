@@ -2,8 +2,8 @@ import { SiReact, SiNodedotjs, SiPython, SiAwsamplify, SiMongodb, SiPostgresql, 
 import { FaAws } from "react-icons/fa";
 import { BiLogoFirebase, BiLogoSpringBoot } from "react-icons/bi";
 // Image assets from public directory
-const tictracImg = "/assets/tictrac.png";
-const reachAlertImg = "/assets/reachAlert.png";
+const tictracImg = "/assets/projects/Tic%20Trac/Tic%20Trac%201.png";
+const reachAlertImg = "/assets/projects/Reach%20Alert/Play%20Store%20Image%201.png";
 const intelliSwitchImg = "/assets/intelliSwitch.png";
 
 export const RESUME_DATA = {
@@ -91,6 +91,15 @@ export const PROJECTS_DATA = [
     technologies: ["Flutter", "Java", "AWS", "Firebase", "NodeJS", "ExpressJS"],
     metrics: "20,000+ downloads",
     image: tictracImg,
+    gallery: [
+      "/assets/projects/Tic%20Trac/Tic%20Trac%201.png",
+      "/assets/projects/Tic%20Trac/Tic%20Trac%202.png",
+      "/assets/projects/Tic%20Trac/Tic%20Trac%203.png",
+      "/assets/projects/Tic%20Trac/Tic%20Trac%204.png",
+      "/assets/projects/Tic%20Trac/Tic%20Trac%205.png",
+      "/assets/projects/Tic%20Trac/Tic%20Trac%206.png",
+      "/assets/projects/Tic%20Trac/Tic%20Trac%207.jpg"
+    ],
     url: "https://play.google.com/store/apps/details?id=com.confegure.tictrac"
   },
   {
@@ -99,7 +108,46 @@ export const PROJECTS_DATA = [
     technologies: ["Java", "XML", "Firebase", "Foreground Service"],
     metrics: "1000+ downloads",
     image: reachAlertImg,
+    gallery: [
+      "/assets/projects/Reach%20Alert/Play%20Store%20Image%201.png",
+      "/assets/projects/Reach%20Alert/Play%20Store%20Image%202.png",
+      "/assets/projects/Reach%20Alert/Play%20Store%20Image%203.png",
+      "/assets/projects/Reach%20Alert/Play%20Store%20Image%204.png",
+      "/assets/projects/Reach%20Alert/Play%20Store%20Image%205.png"
+    ],
     url: "https://play.google.com/store/apps/details?id=com.ismartapps.reachalert"
+  },
+  {
+    title: "ML Heavy Simulation & Analytics Dashboards",
+    description: "Cloud-hosted simulation platform with advanced analytics.",
+    technologies: ["Vite", "Django", "Python", "AWS"],
+    metrics: "Production deployed",
+    image: "", // Placeholder or use existing logic if any
+    gallery: [],
+    url: "https://febioonthecloud.com"
+  },
+  {
+    title: "Company Portfolio Websites",
+    description: "Corporate portfolio and service showcase websites.",
+    technologies: ["HTML", "CSS", "React"],
+    metrics: "Live Website",
+    image: "", // Placeholder
+    gallery: [],
+    url: "https://www.epitomeri.com"
+  },
+  {
+    title: "Ok Next",
+    description: "Multi-purpose queue management and e-commerce application.",
+    technologies: ["Flutter", "Node.js", "Firebase"],
+    metrics: "Production App",
+    image: "", // Placeholder
+    gallery: [
+      "/assets/projects/Ok!%20Next/Image%201.jpg",
+      "/assets/projects/Ok!%20Next/Image%202.jpg",
+      "/assets/projects/Ok!%20Next/Image%203.jpg",
+      "/assets/projects/Ok!%20Next/Image%204.jpg"
+    ],
+    url: "https://play.google.com/store/apps/details?id=com.confegure.oknext"
   },
   {
     title: "Intelli-Switch",
@@ -107,6 +155,7 @@ export const PROJECTS_DATA = [
     technologies: ["C++", "Flutter", "ExpressJS", "MQTT"],
     metrics: "Prototype developed",
     image: intelliSwitchImg,
+    gallery: [],
     url: "/"
   },
 ];

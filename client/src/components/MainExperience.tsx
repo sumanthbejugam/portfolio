@@ -18,22 +18,67 @@ interface SkillItem {
     icon: React.ElementType;
 }
 
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaEye } from "react-icons/fa";
+import { ProjectGallery } from "./project-gallery";
+import { PROJECTS_DATA } from "@/lib/constants";
 
-const SplitGlassCard = ({ title, subtitle, skills, projects, color }: { title: string, subtitle: string, skills: SkillItem[], projects: string[], color: string }) => {
+const SplitGlassCard = ({ title, subtitle, skills, projects, color, onGalleryOpen }: {
+    title: string,
+    subtitle: string,
+    skills: SkillItem[],
+    projects: string[],
+    color: string,
+    onGalleryOpen: (title: string, images: string[]) => void
+}) => {
     const [activeTab, setActiveTab] = useState<'skills' | 'projects'>('skills');
 
-    const ProjectItem = ({ project, color }: { project: string, color: string }) => (
-        <li className="group flex items-center justify-between gap-4 text-sm md:text-base text-gray-300 bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 p-4 rounded-md transition-all duration-300 cursor-pointer">
-            <div className="flex items-center gap-3">
-                <span className={`w-2 h-8 rounded-full bg-gradient-to-b ${color}`} />
-                <span className="font-medium group-hover:text-white transition-colors">{project}</span>
-            </div>
-            {/* <div className={`p-2 rounded-full bg-white/5 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300`}>
-                <FaArrowRight className="text-white text-xs" />
-            </div> */}
-        </li>
-    );
+    const ProjectItem = ({ project, color }: { project: string, color: string }) => {
+        // Find if this project has gallery data
+        // We match by checking if the project string contains the title from our data
+        // This is a simple containment check, might need refinement if names are very different
+        const projectData = PROJECTS_DATA.find(p => project.includes(p.title));
+        const hasGallery = projectData?.gallery && projectData.gallery.length > 0;
+        const hasUrl = projectData?.url && projectData.url !== "/";
+
+        return (
+            <li className="group flex items-center justify-between gap-4 text-sm md:text-base text-gray-300 bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 p-4 rounded-md transition-all duration-300 cursor-pointer">
+                <div className="flex items-center gap-3 flex-grow">
+                    <span className={`w-2 h-8 rounded-full bg-gradient-to-b ${color}`} />
+                    {hasUrl ? (
+                        <a
+                            href={projectData!.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium group-hover:text-white transition-colors hover:underline flex items-center gap-2"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {project}
+                            <FaArrowRight className="text-xs -rotate-45 opacity-50 group-hover:opacity-100 transition-opacity" />
+                        </a>
+                    ) : (
+                        <span className="font-medium group-hover:text-white transition-colors">{project}</span>
+                    )}
+                </div>
+
+                {hasGallery && (
+                    <div
+                        onClick={(e) => {
+                            e.stopPropagation(); // Prevent bubbling
+                            onGalleryOpen(projectData!.title, projectData!.gallery!);
+                        }}
+                        className={`p-2 rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-all duration-300 cursor-pointer z-10`}
+                        title="View Gallery"
+                    >
+                        <FaEye className="text-sm md:text-base" />
+                    </div>
+                )}
+
+                {/* <div className={`p-2 rounded-full bg-white/5 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300`}>
+                    <FaArrowRight className="text-white text-xs" />
+                </div> */}
+            </li>
+        );
+    };
 
     return (
         <div className="w-full max-w-[95%] md:max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-16 pointer-events-none">
@@ -124,6 +169,17 @@ const MainExperience = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [isMobile, setIsMobile] = useState(false);
 
+    // Gallery State
+    const [galleryOpen, setGalleryOpen] = useState(false);
+    const [selectedProjectTitle, setSelectedProjectTitle] = useState("");
+    const [selectedProjectImages, setSelectedProjectImages] = useState<string[]>([]);
+
+    const handleGalleryOpen = (title: string, images: string[]) => {
+        setSelectedProjectTitle(title);
+        setSelectedProjectImages(images);
+        setGalleryOpen(true);
+    };
+
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 768);
         checkMobile();
@@ -133,6 +189,12 @@ const MainExperience = () => {
 
     return (
         <div ref={containerRef} className="relative h-[1600vh] w-full bg-background">
+            <ProjectGallery
+                isOpen={galleryOpen}
+                onOpenChange={setGalleryOpen}
+                projectTitle={selectedProjectTitle}
+                images={selectedProjectImages}
+            />
             {/* The Sticky Canvas Renderer */}
             <div className="sticky top-0 h-screen w-full overflow-hidden">
                 <UnifiedScrollRenderer
@@ -193,10 +255,11 @@ const MainExperience = () => {
                             { name: 'DevOps', icon: FaCogs },
                         ]}
                         projects={[
-                            "Multi-tenant SaaS Super App using Next.js & Django",
-                            "Simulation Platform Modernization (Flask -> Django)",
-                            "High-Performance Marketing Websites"
+                            "Multi-tenant B2B SaaS Platform (Next.js & Django)",
+                            "ML Heavy Simulation & Analytics Dashboards (Vite, Django)",
+                            "Company Portfolio Websites (HTML, CSS, React)"
                         ]}
+                        onGalleryOpen={handleGalleryOpen}
                     />
                 </ScrollTextOverlay>
 
@@ -214,9 +277,10 @@ const MainExperience = () => {
                         ]}
                         projects={[
                             "Tic Trac - Movie Booking Tracker (20k+ Downloads)",
-                            "Lock Down Mart - Local E-commerce & Queueing",
+                            "Ok Next",
                             "Reach Alert - Location Based Alarm System"
                         ]}
+                        onGalleryOpen={handleGalleryOpen}
                     />
                 </ScrollTextOverlay>
 
@@ -238,6 +302,7 @@ const MainExperience = () => {
                             "Domain-Isolated RAG Chatbots",
                             "Wi-Fi Signal Localization using ML"
                         ]}
+                        onGalleryOpen={handleGalleryOpen}
                     />
                 </ScrollTextOverlay>
 
@@ -260,6 +325,7 @@ const MainExperience = () => {
                             "Robotic Eye Control via BLE & WebSockets",
                             "Smart Sensor Integration"
                         ]}
+                        onGalleryOpen={handleGalleryOpen}
                     />
                 </ScrollTextOverlay>
             </div>
