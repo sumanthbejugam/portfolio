@@ -127,8 +127,9 @@ const UnifiedScrollRenderer = ({ imagePaths, containerRef, isMobile = false }: U
             animId = requestAnimationFrame(render);
         }
 
-        // Only start loop if loaded
-        if (loaded) {
+        // Start loop immediately as long as we have image objects
+        // The individual renderFrame function already checks if an image is loaded
+        if (images.length > 0) {
             render();
         }
 

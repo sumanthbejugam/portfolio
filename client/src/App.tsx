@@ -5,7 +5,7 @@ import MainExperience from "./components/MainExperience";
 import TimelineSection from "./components/sections/TimelineSection";
 import DeepDiveSection from "./components/sections/DeepDiveSection";
 import InfoSection from "./components/sections/InfoSection";
-import { allFrames } from "./utils/asset-manifest";
+import { allFrames, allFramesMobile } from "./utils/asset-manifest";
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -45,7 +45,11 @@ function App() {
         // If we load all 360, it might take too long.
         // Let's load the first 90 to be safe for the first scroll interaction.
         // The UnifiedScrollRenderer will also try to load them, but browsers cache them.
-        const preloadParams = allFrames.slice(0, 90);
+        // Check if mobile for optimized assets
+        const isMobile = window.innerWidth < 768;
+        const targetFrames = isMobile ? allFramesMobile : allFrames;
+
+        const preloadParams = targetFrames.slice(0, 90);
 
         if (preloadParams.length === 0) {
             setIsLoading(false);

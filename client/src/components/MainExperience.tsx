@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import UnifiedScrollRenderer from "./canvas/UnifiedScrollRenderer";
 import ScrollTextOverlay from "./canvas/ScrollTextOverlay";
-import { allFrames } from "../utils/asset-manifest";
+import { allFrames, allFramesMobile } from "../utils/asset-manifest";
 import {
     FaReact, FaNodeJs, FaAws, FaAndroid, FaJava, FaBrain, FaRobot, FaCogs, FaChevronDown
 } from "react-icons/fa";
@@ -198,7 +198,7 @@ const MainExperience = () => {
             {/* The Sticky Canvas Renderer */}
             <div className="sticky top-0 h-screen w-full overflow-hidden">
                 <UnifiedScrollRenderer
-                    imagePaths={allFrames}
+                    imagePaths={isMobile ? allFramesMobile : allFrames}
                     containerRef={containerRef}
                     isMobile={isMobile}
                 />

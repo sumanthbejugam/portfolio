@@ -26,3 +26,16 @@ export const allFrames = [
     ...aiDevFrames,
     ...embeddedDevFrames,
 ];
+
+// --- Mobile Optimized Clips (540p) ---
+export const webDevFramesMobile = generatePaths("Clip 1-mobile", 90);
+export const appDevFramesMobile = generatePaths("Clip 2-mobile", 90);
+export const aiDevFramesMobile = generatePaths("Clip 3-mobile", 90);
+export const embeddedDevFramesMobile = generatePaths("Clip 4-mobile", 90);
+
+export const allFramesMobile = [
+    ...webDevFramesMobile,
+    ...appDevFramesMobile,
+    ...aiDevFramesMobile,
+    ...embeddedDevFramesMobile,
+];
