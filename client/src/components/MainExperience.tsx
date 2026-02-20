@@ -257,6 +257,8 @@ const MainExperience = () => {
                         projects={[
                             "Multi-tenant B2B SaaS Platform (Next.js & Django)",
                             "ML Heavy Simulation & Analytics Dashboards (Vite, Django)",
+                            "SWOT UP",
+                            "Red & Blue Appliances",
                             "Company Portfolio Websites (HTML, CSS, React)"
                         ]}
                         onGalleryOpen={handleGalleryOpen}

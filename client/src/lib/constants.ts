@@ -158,6 +158,37 @@ export const PROJECTS_DATA = [
     gallery: [],
     url: "/"
   },
+  {
+    title: "SWOT UP",
+    description: "Helping local businesses grow with modern websites, AI integration, and workflow automation.",
+    technologies: ["Next.js", "React", "AI Integration", "Automation"],
+    metrics: "Live Website",
+    image: "/assets/projects/Swot%20Up/screenshot.png",
+    gallery: [
+      "/assets/projects/Swot%20Up/screenshot.png",
+      "/assets/projects/Swot%20Up/services.png",
+      "/assets/projects/Swot%20Up/about.png",
+      "/assets/projects/Swot%20Up/customer-stories.png",
+      "/assets/projects/Swot%20Up/contact.png",
+      "/assets/projects/Swot%20Up/consultation.png",
+      "/assets/projects/Swot%20Up/restaurants.png",
+      "/assets/projects/Swot%20Up/clinics.png"
+    ],
+    url: "https://swot-up.com"
+  },
+  {
+    title: "Red & Blue Appliances",
+    description: "Professional appliance repair service website with booking functionality.",
+    technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+    metrics: "Live Website",
+    image: "/assets/projects/Red%20and%20Blue%20Appliances/screenshot.png",
+    gallery: [
+      "/assets/projects/Red%20and%20Blue%20Appliances/screenshot.png",
+      "/assets/projects/Red%20and%20Blue%20Appliances/about.png",
+      "/assets/projects/Red%20and%20Blue%20Appliances/contact.png"
+    ],
+    url: "https://redandblueappliances.com/"
+  },
 ];
 
 export const EDUCATION_DATA = [
