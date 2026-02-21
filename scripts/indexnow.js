@@ -2,7 +2,7 @@ import https from 'https';
 
 // Retrieve values from environment or use defaults/placeholders
 const host = 'sumanthbejugam.github.io';
-const key = process.env.INDEXNOW_KEY || 'YOUR_BING_API_KEY';
+const key = process.env.INDEXNOW_KEY || '642bfc5006724f18afb59cbb7a3e3e3c';
 const keyLocation = `https://${host}/portfolio/${key}.txt`;
 
 const urlList = [
