@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import UnifiedScrollRenderer from "./canvas/UnifiedScrollRenderer";
 import ScrollTextOverlay from "./canvas/ScrollTextOverlay";
 import { allFrames, allFramesMobile } from "../utils/asset-manifest";
@@ -187,8 +187,27 @@ const MainExperience = () => {
         return () => window.removeEventListener("resize", checkMobile);
     }, []);
 
+    // Create snapped progress so scroll gestures immediately move the clip ahead
+    const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
+
+    // Adjusted thresholds to be extremely responsive to the first scroll
+    const steppedProgress = useTransform<number, number>(scrollYProgress, (v) => {
+        if (v < 0.02) return 0; // Extremely low threshold so a single wheel tick starts it
+        if (v < 0.25) return 0.25;
+        if (v < 0.50) return 0.5;
+        if (v < 0.75) return 0.75;
+        return 1.0;
+    });
+
+    // Lower stiffness = slower movement. Increased damping = smoother settling
+    const smoothProgress = useSpring(steppedProgress, {
+        stiffness: 15, // dramatically slower than 60
+        damping: 10,  // adjust damping to prevent bouncing while being slow
+        restDelta: 0.001
+    });
+
     return (
-        <div ref={containerRef} className="relative h-[1600vh] w-full bg-background">
+        <div ref={containerRef} className="relative h-[400vh] w-full bg-background">
             <ProjectGallery
                 isOpen={galleryOpen}
                 onOpenChange={setGalleryOpen}
@@ -201,11 +220,12 @@ const MainExperience = () => {
                     imagePaths={isMobile ? allFramesMobile : allFrames}
                     containerRef={containerRef}
                     isMobile={isMobile}
+                    progress={smoothProgress}
                 />
 
                 {/* Text Overlays Layer */}
                 {/* 0% - Intro */}
-                <ScrollTextOverlay showRange={[0.00, 0.15]} containerRef={containerRef}>
+                <ScrollTextOverlay showRange={[0.00, 0.1]} containerRef={containerRef} progress={smoothProgress}>
                     <div className="text-center p-8">
                         <h1 className="text-7xl md:text-9xl font-bold tracking-tighter text-white mb-6 drop-shadow-2xl">
                             Sumanth<br />Bejugam
@@ -236,7 +256,7 @@ const MainExperience = () => {
                 </ScrollTextOverlay>
 
                 {/* 20% - Web Development */}
-                <ScrollTextOverlay showRange={[0.18, 0.35]} containerRef={containerRef}>
+                <ScrollTextOverlay showRange={[0.2, 0.3]} containerRef={containerRef} progress={smoothProgress}>
                     <SplitGlassCard
                         title="Web Development"
                         subtitle="Scalable SaaS & Cloud Architectures"
@@ -266,7 +286,7 @@ const MainExperience = () => {
                 </ScrollTextOverlay>
 
                 {/* 40% - Mobile Development */}
-                <ScrollTextOverlay showRange={[0.38, 0.50]} containerRef={containerRef}>
+                <ScrollTextOverlay showRange={[0.45, 0.55]} containerRef={containerRef} progress={smoothProgress}>
                     <SplitGlassCard
                         title="Mobile Development"
                         subtitle="Native Performance, Cross-Platform Reach"
@@ -287,7 +307,7 @@ const MainExperience = () => {
                 </ScrollTextOverlay>
 
                 {/* 60% - AI Development */}
-                <ScrollTextOverlay showRange={[0.50, 0.70]} containerRef={containerRef}>
+                <ScrollTextOverlay showRange={[0.7, 0.8]} containerRef={containerRef} progress={smoothProgress}>
                     <SplitGlassCard
                         title="AI & ML Integration"
                         subtitle="Intelligent Workflows & Data Systems"
@@ -309,7 +329,7 @@ const MainExperience = () => {
                 </ScrollTextOverlay>
 
                 {/* 80% - IoT Development */}
-                <ScrollTextOverlay showRange={[0.70, 0.95]} containerRef={containerRef} noExitAnimation>
+                <ScrollTextOverlay showRange={[0.95, 1.0]} containerRef={containerRef} progress={smoothProgress} noExitAnimation>
                     <SplitGlassCard
                         title="IoT & Edge Computing"
                         subtitle="Bridging Physical & Digital Worlds"

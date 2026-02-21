@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { useRef } from "react";
 
 interface ScrollTextOverlayProps {
@@ -7,13 +7,16 @@ interface ScrollTextOverlayProps {
     children: React.ReactNode;
     containerRef: React.RefObject<HTMLDivElement>;
     noExitAnimation?: boolean;
+    progress?: MotionValue<number>;
 }
 
-const ScrollTextOverlay = ({ showRange, children, containerRef, noExitAnimation = false }: ScrollTextOverlayProps) => {
+const ScrollTextOverlay = ({ showRange, children, containerRef, noExitAnimation = false, progress }: ScrollTextOverlayProps) => {
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"],
     });
+
+    const activeProgress = progress || scrollYProgress;
 
     // Fade in at start of range, Fade out at end of range
     // e.g. [0.1, 0.3] -> 
@@ -28,19 +31,19 @@ const ScrollTextOverlay = ({ showRange, children, containerRef, noExitAnimation 
     const isStart = start === 0;
 
     const opacity = useTransform(
-        scrollYProgress,
+        activeProgress,
         [start, fadeInEnd, fadeOutStart, end],
         isStart ? [1, 1, 1, 0] : [0, 1, 1, 0]
     );
 
     const y = useTransform(
-        scrollYProgress,
+        activeProgress,
         [start, fadeInEnd, fadeOutStart, end],
         isStart ? [0, 0, 0, -50] : [50, 0, 0, -50]
     );
 
     const visibility = useTransform(
-        scrollYProgress,
+        activeProgress,
         (val) => {
             if (noExitAnimation) {
                 return val >= start ? "visible" : "hidden";

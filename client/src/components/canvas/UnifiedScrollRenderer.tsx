@@ -1,13 +1,14 @@
-import { useScroll, useTransform } from "framer-motion";
+import { useScroll, useTransform, MotionValue } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 interface UnifiedScrollRendererProps {
     imagePaths: string[];
     containerRef?: React.RefObject<HTMLElement>;
     isMobile?: boolean;
+    progress?: MotionValue<number>;
 }
 
-const UnifiedScrollRenderer = ({ imagePaths, containerRef, isMobile = false }: UnifiedScrollRendererProps) => {
+const UnifiedScrollRenderer = ({ imagePaths, containerRef, isMobile = false, progress }: UnifiedScrollRendererProps) => {
     const localRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const targetRef = containerRef || localRef; // Use external ref if provided
@@ -21,6 +22,8 @@ const UnifiedScrollRenderer = ({ imagePaths, containerRef, isMobile = false }: U
         offset: ["start start", "end end"],
     });
 
+    const activeProgress = progress || scrollYProgress;
+
     const maxIndex = imagePaths.length - 1;
 
     // Frame Mapping Logic
@@ -29,7 +32,7 @@ const UnifiedScrollRenderer = ({ imagePaths, containerRef, isMobile = false }: U
     const inputRange = isMobile ? [0, 0.75, 1, 1] : [0, 1];
     const outputRange = isMobile ? [0, 0.75 * maxIndex, maxIndex, maxIndex] : [0, maxIndex];
 
-    const frameIndex = useTransform(scrollYProgress, inputRange, outputRange);
+    const frameIndex = useTransform(activeProgress, inputRange, outputRange);
 
     // Preload Images
     useEffect(() => {
