@@ -1,0 +1,7 @@
+# Sumanth Bejugam - Software Developer Portfolio
+This is the personal portfolio of Sumanth Bejugam.
+Find out more about Sumanth's projects, experience, and deep dives at: https://sumanthbejugam.github.io/portfolio/
+
+## About Sumanth
+Sumanth is a Full Stack AI Software Developer building scalable web, mobile, and IoT applications.
+The portfolio features interactive experiences, timelines, and technical deep dives.

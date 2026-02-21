@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sumanth Bejugam - Portfolio (Redirect)</title>
+    <!-- Redirect to the main app index to preserve routing for SPA on GitHub Pages -->
+    <script>
+        // Single Page Apps for GitHub Pages
+        // This script will redirect to the index.html
+        var pathSegmentsToKeep = 1; // 1 for username.github.io/repo-name
+        var repoName = "/portfolio";
+        var l = window.location;
+        l.replace(
+            l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+            repoName + '/?p=' +
+            l.pathname.split('/').slice(0).join('/').replace(repoName, '') +
+            l.search
+        );
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
