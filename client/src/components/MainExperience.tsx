@@ -207,7 +207,7 @@ const MainExperience = () => {
     });
 
     return (
-        <div ref={containerRef} className="relative h-[400vh] w-full bg-background">
+        <div ref={containerRef} className={`relative ${isMobile ? "h-[800vh]" : "h-[400vh]"} w-full bg-background`}>
             <ProjectGallery
                 isOpen={galleryOpen}
                 onOpenChange={setGalleryOpen}
